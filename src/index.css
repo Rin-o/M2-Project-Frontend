@@ -23,8 +23,14 @@ a:hover {
   color: #535bf2;
 }
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -34,6 +40,40 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.font-container {
+  font-family: 'Saira', sans-serif;
+  color: #3c55ff
+}
+
+.container {
+  background: #fce4de;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  width: 100hw;
+}
+
+.image {
+  height: 750px;
+  width: 525px;
+  background-color: #3c55ff;
+  padding: 50px;
+  background-clip: padding-box;
+}
+
+.cloud{
+  height: 150px;
+}
+
+.socialMedia {
+  background: #fce4de;
+  height:35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 button {
@@ -66,4 +106,8 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+footer {
+  font-family: 'Saira', sans-serif;
 }
