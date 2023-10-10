@@ -8,7 +8,8 @@ const AdminPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = () =>  {
+    const handleLogin = (event) =>  {
+        event.preventDefault()
         if (username && password) {
             <Navigate to={`/babysitters/${babysitterId}/update`} />
         } else {
@@ -19,7 +20,7 @@ const AdminPage = () => {
         return (
             <div>
             <h1>Login</h1>
-            <form>
+            <form onSubmit={handleLogin}>
               <label>Username:</label>
               <input
                 type="text"
@@ -39,7 +40,7 @@ const AdminPage = () => {
                 required
               />
               <Link to={`/babysitters/${babysitterId}/update`}>
-              <button type="button" onClick={handleLogin}>
+              <button type="submit">
                 Login
               </button>
               </Link>

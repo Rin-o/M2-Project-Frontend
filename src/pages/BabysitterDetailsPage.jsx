@@ -30,23 +30,6 @@ const BabysitterDetailsPage = () => {
         console.log(babysitter)
     }, [babysitter])
 
-    const handleDelete = async () => {
-        try {
-          const response = await fetch(`http://localhost:5005/babysitters/${babysitterId}`, {
-            method: 'DELETE',
-          })
-          if (response.ok) {
-            const parsed = await response.json()
-            console.log(parsed)
-            navigate('/babysitters')
-          }
-        } catch (error) {
-          console.log(error)
-        }
-      }
-
-    const isAdmin = false;
-
     return !babysitter ? (
     <h1>Loading ...</h1>
     ) : (
@@ -72,10 +55,9 @@ const BabysitterDetailsPage = () => {
             </div>
           </div>
           <button type='button'>Send an email</button>
-          <Link to={`/adminPassword`}>
+          <Link to={`/adminPassword/${babysitterId}`}>
             <button type='button'>Update</button>
           </Link>
-          <button type='button' onClick={()=>{handleDelete(babysitter.id)}}>Delete</button>
         </>
     );
 }

@@ -19,7 +19,7 @@ function App() {
       <Route path='/babysitters' element={<AllBabysittersPage />}></Route>
       <Route path='/babysitters/:babysitterId' element={<BabysitterDetailsPage />}></Route>
       <Route path='/babysitters/new' element={<AddBabysitterPage />}></Route>
-      <Route path='/adminPassword' element={<AdminPage />}></Route>
+      <Route path='/adminPassword/:babysitterId' element={<AdminPage />}></Route>
       <Route path='/babysitters/:babysitterId/update' element={<UpdatePage />}></Route>
       <Route path='/aboutus' element={<AboutUsPage />}></Route>
       

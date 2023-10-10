@@ -65,7 +65,7 @@ const UpdatePage = () => {
         )
         if (response.ok) {
             const babysitter = await response.json()
-
+console.log(babysitter)
             setFirstName(babysitter.name.first)
             setLastName(babysitter.name.last)
             setGender(babysitter.gender)
@@ -77,7 +77,7 @@ const UpdatePage = () => {
             setPostcode(babysitter.location.postcode)
             setEmail(babysitter.email)
             setPhone(babysitter.phone) 
-            setPassword(babysitter.password)
+            setPassword(babysitter.password? babysitter.password : '')
             setPicture(babysitter.picture) 
             setExperience(babysitter.experience) 
         }
@@ -86,6 +86,21 @@ const UpdatePage = () => {
     useEffect(() => {
         fetchBabysitter()
     }, [])
+
+    const handleDelete = async () => {
+      try {
+        const response = await fetch(`http://localhost:5005/babysitters/${babysitterId}`, {
+          method: 'DELETE',
+        })
+        if (response.ok) {
+          const parsed = await response.json()
+          console.log(parsed)
+          navigate('/babysitters')
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
 
     
 
@@ -152,6 +167,8 @@ const UpdatePage = () => {
             <input value={picture} onChange={event => setPicture(event.target.value)}/>
           </label>
           <button>Update</button>
+          <button type='button' onClick={()=>{handleDelete(babysitterId)}}>Delete</button>
+
         </form>
         </div>
      );
