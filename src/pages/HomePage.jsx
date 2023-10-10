@@ -8,11 +8,7 @@ const HomePage = () => {
                 <img src="src/assets/Images/cloud_icon.png" alt="cloud icon" className="cloud"/>
                 <div></div>
                 </div>
-<<<<<<< HEAD
-                <img src="src/assets/Images/full-shot-teacher-helping-girl-learn.jpg" alt="Image a teacher helping a child learn" className="image"/>
-=======
                 <img src="src/assets/Images/full-shot-teacher-helping-girl-learn.jpg" alt="Image a teacher helping a child learn" className="imageRectangle"/>
->>>>>>> main
             </div>
 
             <footer></footer>

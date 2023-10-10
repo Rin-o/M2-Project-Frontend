@@ -26,11 +26,8 @@ a:hover {
 html {
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
-=======
   width: 100vw;
   height: 100vh;
->>>>>>> main
 }
 
 body {
@@ -53,11 +50,8 @@ h1 {
 }
 
 .container {
-<<<<<<< HEAD
-=======
   margin: 0;
   padding: 0;
->>>>>>> main
   background: #fce4de;
   display: flex;
   flex-direction: row;
@@ -66,20 +60,12 @@ h1 {
   width: 100hw;
 }
 
-<<<<<<< HEAD
-.image {
-  height: 750px;
-  width: 525px;
-  background-color: #3c55ff;
-  padding: 50px;
-=======
 .imageRectangle {
   margin: 0;
   height: 750px;
   width: 525px;
   background-color: #3c55ff;
   padding: 70px;
->>>>>>> main
   background-clip: padding-box;
 }
 
@@ -87,11 +73,6 @@ h1 {
   height: 150px;
 }
 
-<<<<<<< HEAD
-.socialMedia {
-  background: #fce4de;
-  height:35px;
-=======
 .ironnannyLogo {
   height: 40px;
 }
@@ -99,7 +80,6 @@ h1 {
 .socialMedia {
   background: #fce4de;
   height:30px;
->>>>>>> main
   display: flex;
   flex-direction: row;
   justify-content: center;
