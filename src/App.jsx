@@ -18,7 +18,7 @@ function App() {
       <Route path='/babysitters' element={<AllBabysittersPage />}></Route>
       <Route path='/babysitters/:babysitterId' element={<BabysitterDetailsPage />}></Route>
       <Route path='/babysitters/new' element={<AddBabysitterPage />}></Route>
-      <Route path='/update/:babysitterId' element={<UpdatePage />}></Route>
+      <Route path='/babysitters/:babysitterId/update' element={<UpdatePage />}></Route>
       <Route path='/aboutus' element={<AboutUsPage />}></Route>
       
       <Route path='*' element={<h1>404 Page</h1>}></Route>

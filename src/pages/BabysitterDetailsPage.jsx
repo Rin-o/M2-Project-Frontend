@@ -70,7 +70,9 @@ const BabysitterDetailsPage = () => {
             </div>
           </div>
           <button type='button'>Send an email</button>
-          <Link to={`/update/${babysitter.id}`}>Update</Link>
+          <Link to={`/babysitters/${babysitter.id}/update`}>
+            <button type='button'>Update</button>
+          </Link>
           <button type='button' onClick={()=>{handleDelete(babysitter.id)}}>Delete</button>
         </>
     );
