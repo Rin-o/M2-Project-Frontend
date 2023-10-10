@@ -4,20 +4,20 @@ function Navbar() {
     return (
         <>
         <nav style={{display: 'flex', alignItems: 'center'}}>
-        <img src="src/assets/Images/IronNanny_logo_2.png" alt="IronNanny logo" className="ironnannyLogo"/>
-            <div>
+        <div>
+        <img src="src/assets/Images/IronNanny_logo_2.png" alt="IronNanny logo" className="logo"/> 
                 <Link to='/'>
-                    <button>HomePage</button>
+                    <button className="btnNav">Home</button>
                 </Link>
                 <Link to='/babysitters'>
-                    <button>Find a nanny</button>
+                    <button className="btnNav">Find a Nanny</button>
                 </Link>
                 <Link to='/babysitters/new'>
-                    <button>Register</button>
+                    <button className="btnNav">Register</button>
                 </Link>
 
                 <Link to='/aboutus'>
-                <button>About us</button>
+                <button className="btnNav">About Us</button>
                 </Link>
             </div>
         </nav>
