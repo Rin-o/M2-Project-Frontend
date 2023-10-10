@@ -7,6 +7,7 @@ import BabysitterDetailsPage from './pages/BabysitterDetailsPage'
 import AddBabysitterPage from './pages/AddBabysitterPage'
 import UpdatePage from './pages/UpdatePage'
 import AboutUsPage from './pages/AboutUsPage'
+import AdminPage from './pages/AdminPage'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <Route path='/babysitters' element={<AllBabysittersPage />}></Route>
       <Route path='/babysitters/:babysitterId' element={<BabysitterDetailsPage />}></Route>
       <Route path='/babysitters/new' element={<AddBabysitterPage />}></Route>
+      <Route path='/adminPassword' element={<AdminPage />}></Route>
       <Route path='/babysitters/:babysitterId/update' element={<UpdatePage />}></Route>
       <Route path='/aboutus' element={<AboutUsPage />}></Route>
       

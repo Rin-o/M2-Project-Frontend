@@ -45,6 +45,8 @@ const BabysitterDetailsPage = () => {
         }
       }
 
+    const isAdmin = false;
+
     return !babysitter ? (
     <h1>Loading ...</h1>
     ) : (
@@ -70,7 +72,7 @@ const BabysitterDetailsPage = () => {
             </div>
           </div>
           <button type='button'>Send an email</button>
-          <Link to={`/babysitters/${babysitter.id}/update`}>
+          <Link to={`/adminPassword`}>
             <button type='button'>Update</button>
           </Link>
           <button type='button' onClick={()=>{handleDelete(babysitter.id)}}>Delete</button>
