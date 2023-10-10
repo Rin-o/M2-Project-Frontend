@@ -36,6 +36,28 @@ h1 {
   line-height: 1.1;
 }
 
+.font-container {
+  font-family: 'Saira', sans-serif;
+  color: #3c55ff
+}
+
+.container {
+  background: #fce4de;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  width: 100hw;
+}
+
+.image {
+  height: 750px;
+  width: 525px;
+  background-color: #3c55ff;
+  padding: 50px;
+  background-clip: padding-box;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
