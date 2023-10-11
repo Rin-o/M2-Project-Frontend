@@ -95,8 +95,6 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
         <div className="container">
         <form  className="row g-3" onSubmit={onSubmit}>
         
-<<<<<<< HEAD
-=======
         <div className="col-md-6">
           <label htmlFor="inputFirstName" className="form-label">
             First Name
@@ -161,7 +159,6 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
           </label>
         </div>
 
->>>>>>> 5aeecb5 (css updated on add nanny page)
           <div className="col-md-6">
             <label htmlFor="inputFirstName" className="form-label">
               First Name
