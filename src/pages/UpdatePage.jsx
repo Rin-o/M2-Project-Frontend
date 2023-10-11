@@ -21,6 +21,7 @@ const UpdatePage = () => {
     const [description, setDescription] = useState('')
     const [picture, setPicture] = useState('')
     const [experience, setExperience] = useState(0)
+    const [cost, setCost] = useState(0)
     
     const onSubmit = async event => {
         event.preventDefault()
@@ -33,6 +34,7 @@ const UpdatePage = () => {
           password, 
           location: {streetNumber, streetName, city: cityName, postcode}, 
           experience,
+          cost,
           description, 
           picture,
           id: uuidv4()}
@@ -77,15 +79,31 @@ const UpdatePage = () => {
             setPostcode(babysitter.location.postcode)
             setEmail(babysitter.email)
             setPhone(babysitter.phone) 
-            setPassword(babysitter.password)
+            setPassword(babysitter.password? babysitter.password : '')
             setPicture(babysitter.picture) 
             setExperience(babysitter.experience) 
+            setCost(babysitter.cost)
         }
     }
 
     useEffect(() => {
         fetchBabysitter()
     }, [])
+
+    const handleDelete = async () => {
+      try {
+        const response = await fetch(`http://localhost:5005/babysitters/${babysitterId}`, {
+          method: 'DELETE',
+        })
+        if (response.ok) {
+          const parsed = await response.json()
+          console.log(parsed)
+          navigate('/babysitters')
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
 
     
 
@@ -144,6 +162,10 @@ const UpdatePage = () => {
             <input type='number' value={experience} onChange={event => setExperience(event.target.value)}/>
           </label>
           <label>
+            Cost
+            <input type='number' value={cost} onChange={event => setCost(event.target.value)}/>
+          </label>
+          <label>
             Description
             <textarea value={description} onChange={event => setDescription(event.target.value)}/>
           </label>
@@ -152,6 +174,8 @@ const UpdatePage = () => {
             <input value={picture} onChange={event => setPicture(event.target.value)}/>
           </label>
           <button>Update</button>
+          <button type='button' onClick={()=>{handleDelete(babysitterId)}}>Delete</button>
+
         </form>
         </div>
      );

@@ -14,6 +14,12 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.app {
+  background: #fce4de;
+  margin: 0;
+  padding: 0;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -31,8 +37,7 @@ p {
 html {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+  background: #fce4de;
 }
 
 body {
@@ -40,18 +45,37 @@ body {
   padding: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background: #fce4de;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: 'Saira', sans-serif;
+  color: #3c55ff;
+}
+
+h2, h3, h4, h5 {
+  font-family: 'Saira', sans-serif;
+  color: #3c55ff;
+}
+
+.whiteBox {
+  background-color:white;
+  padding:10px;
 }
 
 .font-container {
   font-family: 'Saira', sans-serif;
-  color: #3c55ff
+  color: #3c55ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+li {
+  padding: 100px;
 }
 
 .container {
@@ -61,12 +85,17 @@ h1 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 100vh;
-  width: 100hw;
+  height:100vh;
+    width: 100vw;
 }
 
 .allNannyContainer {
   background: #E6F89C;
+.otherContainer {
+  margin: 0;
+  padding: 0;
+  background: #fce4de;
+
 }
 
 .imageRectangle {
@@ -75,10 +104,32 @@ h1 {
   background-color: #3c55ff;
   padding: 50px;
   background-clip: padding-box;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+img .nannyPic {
+  border-radius: 15px;
 }
 
 .cloud{
-  height: 150px;
+  height: 100px;
+  margin: 20px;
+}
+
+.ironnannyLogo {
+  height: 40px;
+}
+
+.hoverImg figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hoverImg figure:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
 }
 
 .logo {
@@ -90,15 +141,23 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .twoClouds {
   display: flex;
   flex-direction: row;
-  align-items: space-between;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
 }
 
 .btnNav {
+  margin: 10px;
   background-color: #fff;
   border: 0 solid #e2e8f0;
   border-radius: 1.5rem;
@@ -133,6 +192,14 @@ h1 {
   }
 }
 
+form {
+  width: 50%;
+}
+
 footer {
   font-family: 'Saira', sans-serif;
+  background: #fce4de;
+  margin: 0;
+  padding: 0;
+}
 }
