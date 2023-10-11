@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom'
 function Navbar() {
     return (
         <>
-        <nav style={{display: 'flex', alignItems: 'center'}}>
+        <nav style={{display: 'flex', alignItems: 'center'}} className="navBar">
         <div>
-        <img src="src/assets/Images/IronNanny_logo_2.png" alt="IronNanny logo" className="logo"/> 
+          <img src="src/assets/Images/IronNanny_logo_3.png" alt="IronNanny logo" className="logo"/>
                 <Link to='/'>
                     <button className="btnNav">Home</button>
                 </Link>
@@ -19,7 +19,7 @@ function Navbar() {
                 <Link to='/aboutus'>
                 <button className="btnNav">About Us</button>
                 </Link>
-            </div>
+        </div>
         </nav>
         
         </>

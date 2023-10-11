@@ -33,8 +33,8 @@ const BabysitterDetailsPage = () => {
     return !babysitter ? (
     <h1>Loading ...</h1>
     ) : (
-        <>
-          <img src={babysitter.picture}/>
+        <div className="otherContainer">
+          <img className="nannyPic" src={babysitter.picture}/>
           <h1>{babysitter.name.first} {babysitter.name.last}</h1>
           <h4>{babysitter.experience} years of experience</h4>
           <div style={{display: 'flex', alignItems:'center'}}>
@@ -54,11 +54,11 @@ const BabysitterDetailsPage = () => {
               <p>{babysitter.description}</p>
             </div>
           </div>
-          <button type='button'>Send an email</button>
+          <button type='button' className="btnNav">Send an email</button>
           <Link to={`/adminPassword/${babysitterId}`}>
-            <button type='button'>Update</button>
+            <button type='button' className="btnNav">Update</button>
           </Link>
-        </>
+        </div>
     );
 }
  

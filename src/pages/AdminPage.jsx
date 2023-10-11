@@ -18,7 +18,7 @@ const AdminPage = () => {
     }
 
         return (
-            <div>
+            <div className="otherContainer">
             <h1>Login</h1>
             <form onSubmit={handleLogin}>
               <label>Username:</label>
@@ -40,7 +40,7 @@ const AdminPage = () => {
                 required
               />
               <Link to={`/babysitters/${babysitterId}/update`}>
-              <button type="submit">
+              <button type="submit" className="btnNav">
                 Login
               </button>
               </Link>

@@ -27,20 +27,24 @@ const AllBabysittersPage = () => {
       }
 
       return ( 
-        <div className="allNannyContainer">
+        <div className="otherContainer">
           <div className="twoClouds">
           <img src="src/assets/Images/cloud_icon.png" alt="cloud icon" className="cloud"/>
-          <h1 className="font-container">Our Nannys</h1>
+          <h1 className="font-container" style={{textAlign: 'center'}}>Our Nannys</h1>
           <img src="src/assets/Images/cloud_icon.png" alt="cloud icon" className="cloud"/>
           </div>
           <p>IronNanny makes finding a local, trusted nanny, easier than ever.</p>
           <ul style={{listStyle: 'none', display: 'grid', gridTemplate: 'auto / repeat(3, 1fr)',
           gap: '1rem', padding: '0 1rem',}}>
               {babysitters.map(el => (
-                <li key={el.id}>
-                  <Link to={`/babysitters/${el.id}`}>
+                <li key={el.id} style={{
+                  padding: '1rem',
+                  borderRadius: '12px',
+                  boxShadow: '1px 2px 7px 2px lightGrey',
+                }}>
+                  <Link style={{textDecoration: 'none'}} to={`/babysitters/${el.id}`}>
                     <div className="font-container">
-                    <img src={el.picture}/>
+                    <div className="hoverImg"><figure><img src={el.picture}/></figure></div>
                       <h3>{el.name.first}</h3>
                       <p>{el.experience} years of experience</p>
                   </div>
