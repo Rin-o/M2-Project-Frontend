@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom"
 import {useState, useEffect} from 'react'
+import AddBabysitterPage from './AddBabysitterPage'
+import cloudImage from '../assets/Images/cloud_icon.png'
+
 
 const AllBabysittersPage = () => {
 
@@ -40,9 +43,9 @@ const AllBabysittersPage = () => {
       return ( 
         <div className="otherContainer">
           <div className="twoClouds">
-          <img src="src/assets/Images/cloud_icon.png" alt="cloud icon" className="cloud"/>
+          <img src={cloudImage} alt="cloud icon" className="cloud"/>
           <h1 className="font-container" style={{textAlign: 'center'}}>Our Nannys</h1>
-          <img src="src/assets/Images/cloud_icon.png" alt="cloud icon" className="cloud"/>
+          <img src={cloudImage} alt="cloud icon" className="cloud"/>
           </div>
           <p>IronNanny makes finding a local, trusted nanny, easier than ever.</p>
           <div className="btn-group" role="group" aria-label="Basic example">

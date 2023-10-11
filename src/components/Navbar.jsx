@@ -1,11 +1,13 @@
 import {Link} from 'react-router-dom'
+import logo from '../assets/Images/IronNanny_logo_3.png'
+
 
 function Navbar() {
     return (
         <>
         <nav style={{display: 'flex', alignItems: 'center'}} className="navBar">
         <div>
-          <img src="src/assets/Images/IronNanny_logo_3.png" alt="IronNanny logo" className="logo"/>
+          <img src={logo} alt="IronNanny logo" className="logo"/>
                 <Link to='/'>
                     <button className="btnNav">Home</button>
                 </Link>

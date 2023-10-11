@@ -14,6 +14,12 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.app {
+  background: #fce4de;
+  margin: 0;
+  padding: 0;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -31,8 +37,7 @@ p {
 html {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+  background: #fce4de;
 }
 
 body {
@@ -40,8 +45,7 @@ body {
   padding: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background: #fce4de;
 }
 
 h1 {
@@ -56,6 +60,11 @@ h2, h3, h4, h5 {
   color: #3c55ff;
 }
 
+.whiteBox {
+  background-color:white;
+  padding:10px;
+}
+
 .font-container {
   font-family: 'Saira', sans-serif;
   color: #3c55ff;
@@ -65,7 +74,9 @@ h2, h3, h4, h5 {
   text-align: center;
 }
 
-
+li {
+  padding: 100px;
+}
 
 .container {
   margin: 0;
@@ -82,14 +93,8 @@ h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
   background: #fce4de;
+
 }
-
-.otherContainer h1, h2, h3, h4, h5 {
-  font-family: 'Saira', sans-serif;
-  color: #3c55ff;
-}
-
-
 
 .imageRectangle {
   height: 750px;
@@ -97,6 +102,8 @@ h2, h3, h4, h5 {
   background-color: #3c55ff;
   padding: 50px;
   background-clip: padding-box;
+  margin-top: 30px;
+  margin-left: 30px;
 }
 
 img .nannyPic {
@@ -135,6 +142,7 @@ img .nannyPic {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
 .navBar {
@@ -176,6 +184,10 @@ img .nannyPic {
     font-size: 1.125rem;
     padding: 1rem 2rem;
   }
+}
+
+form {
+  width: 50%;
 }
 
 footer {

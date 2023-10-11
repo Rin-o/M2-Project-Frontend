@@ -1,3 +1,6 @@
+import cloudImage from '../assets/Images/cloud_icon.png'
+import nannyImage from '../assets/Images/full-shot-teacher-helping-girl-learn.jpg'
+
 const HomePage = () => {
     return ( 
         <>
@@ -5,9 +8,9 @@ const HomePage = () => {
                 <div className="textHomepage">
                 <h1 className="font-container">Exceptional child care and early learning for today's families.</h1>
                 <p>With warm, experienced nannies, full-day schedules, rolling admissions and a world-class curriculum, IronNanny meets you where you are.</p>
-                <img src="src/assets/Images/cloud_icon.png" alt="cloud icon" className="cloud"/>
+                <img src={cloudImage} alt="cloud icon" className="cloud"/>
                 </div>
-                <img src="src/assets/Images/full-shot-teacher-helping-girl-learn.jpg" alt="Image a teacher helping a child learn" className="imageRectangle"/>
+                <img src={nannyImage} alt="Image a teacher helping a child learn" className="imageRectangle"/>
             </div>
 
             <footer></footer>

@@ -12,7 +12,7 @@ import AdminPage from './pages/AdminPage'
 function App() {
 
   return (
-    <div className='App'>
+    <div className='app'>
     <Navbar />
     <Routes>
       <Route path='/' element={<HomePage />}></Route>
@@ -26,13 +26,6 @@ function App() {
       <Route path='*' element={<h1>404 Page</h1>}></Route>
     </Routes>
     <footer>
-      <div className="socialMedia">
-            <img src="src/assets/Images/Instagram_icon.png" alt="Instagram icon"/>
-            <img src="src/assets/Images/Facebook_icon.png" alt="Facebook icon"/>
-            <img src="src/assets/Images/Youtube_icon.png" alt="Youtube icon"/>
-            <img src="src/assets/Images/Twitter_icon.png" alt="Twitter icon"/>
-            <img src="src/assets/Images/Linkedin_icon.png" alt="Linkedin icon"/>
-        </div>
       <p>©2023 All Right Reserved by Alice and Rino</p>
       </footer>
 
