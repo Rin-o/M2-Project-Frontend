@@ -46,8 +46,8 @@ const AllBabysittersPage = () => {
           </div>
           <p>IronNanny makes finding a local, trusted nanny, easier than ever.</p>
           <div className="btn-group" role="group" aria-label="Basic example">
-          <button type='button' class="btn btn-secondary" onClick={() => handleSortByAge()}>Sort by age</button>
-          <button type='button' class="btn btn-secondary" onClick={() => handleSortByExperience()}>Sort by experience</button>
+          <button type='button' className="btn btn-secondary" onClick={() => handleSortByAge()}>Sort by age</button>
+          <button type='button' className="btn btn-secondary" onClick={() => handleSortByExperience()}>Sort by experience</button>
           </div>
           <ul style={{listStyle: 'none', display: 'grid', gridTemplate: 'auto / repeat(3, 1fr)',
           gap: '1rem', padding: '0 1rem',}}>

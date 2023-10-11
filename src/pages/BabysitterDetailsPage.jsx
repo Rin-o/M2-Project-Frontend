@@ -1,6 +1,6 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from 'react'
-
+import AvailabilityPage from './AvailabilityPage';
 
 const BabysitterDetailsPage = () => {
 
@@ -52,8 +52,10 @@ const BabysitterDetailsPage = () => {
               <br/ >{babysitter.location.postcode} {babysitter.location.city}</p>
             </div>
             <div style={{textAlign:'justify', marginLeft:'3rem'}}>
-              <h3>Description:</h3>
+              <h3>Description</h3>
               <p>{babysitter.description}</p>
+              <h3>Availability</h3>
+              <AvailabilityPage />                          
             </div>
           </div>
           <button type='button' className="btnNav">Send an email</button>
