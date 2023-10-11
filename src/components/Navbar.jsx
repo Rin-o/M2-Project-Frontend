@@ -5,7 +5,7 @@ function Navbar() {
         <>
         <nav style={{display: 'flex', alignItems: 'center'}}>
         <div>
-        <img src="src/assets/Images/IronNanny_logo_2.png" alt="IronNanny logo" className="logo"/> 
+        <img src="src/assets/Images/IronNanny_logo_3.png" alt="IronNanny logo" className="logo"/> 
                 <Link to='/'>
                     <button className="btnNav">Home</button>
                 </Link>
