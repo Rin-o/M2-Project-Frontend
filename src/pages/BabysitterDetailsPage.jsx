@@ -41,26 +41,26 @@ const BabysitterDetailsPage = () => {
           <img className="nannyPic" src={babysitter.picture}/>
           <img src={cloudImage} alt="cloud icon" className="cloud"/>
           </div>
-          <h1>{babysitter.name.first} {babysitter.name.last}</h1>
-          <h4>{babysitter.experience} years of experience</h4>
+          <h1 className="fontColor">{babysitter.name.first} {babysitter.name.last}</h1>
+          <h4 className="fontColor">{babysitter.experience} years of experience</h4>
           <p>£{babysitter.cost} per hour</p>
 
           <div className="nannyInfo" style={{display: 'flex', alignItems:'center'}}>
             <div className="nannyInfo" style={{display: 'flex', flexDirection: 'column', textAlign: 'left'}}>
-              <h5>Age:</h5>
+              <h5 className="fontColor">Age:</h5>
               <p className="whiteBox">{babysitter.age} years-old</p>
-              <h5>Telephone:</h5>
+              <h5 className="fontColor">Telephone:</h5>
               <p className="whiteBox">{babysitter.phone}</p>
-              <h5>Email:</h5>
+              <h5 className="fontColor">Email:</h5>
               <p className="whiteBox">{babysitter.email}</p>
-              <h5>Address:</h5>
+              <h5 className="fontColor">Address:</h5>
               <p className="whiteBox">{babysitter.location.streetNumber} {babysitter.location.streetName}
               <br/ >{babysitter.location.postcode} {babysitter.location.city}</p>
             </div>
             <div  className="nannyInfo" style={{textAlign:'justify', marginLeft:'3rem'}}>
-            <h3>Description:</h3>
+            <h3 className="fontColor">Description:</h3>
               <p className="whiteBox">{babysitter.description}</p>
-              <h3>Availability</h3>
+              <h3 className="fontColor">Availability</h3>
               <AvailabilityPage />                          
             </div>
           </div>

@@ -26,16 +26,16 @@ const WeeklyAvailability = () => {
         <div className="tbl-header">
             <table>
                 <thead>
-                <tr>
+                <tr className="border-top">
                     <th>Day</th>
                     <th>Morning</th>
                     <th>Afternoon</th>
                 </tr>
                 </thead>
 
-                <tbody class="tbl-content">
+                <tbody className="tbl-content">
                 {days.map((day) => (
-                    <tr key={day.day}>
+                    <tr className="border-top" key={day.day}>
                     <td>{day.day}</td>
                     <td>{day.morning ? '✅' : ''}</td>
                     <td>{day.afternoon ? '✅' : ''}</td>
