@@ -7,6 +7,7 @@ const HomePage = () => {
                 <p>With warm, experienced nannies, full-day schedules, rolling admissions and a world-class curriculum, IronNanny meets you where you are.</p>
                 <img src="src/assets/Images/cloud_icon.png" alt="cloud icon" className="cloud"/>
                 <div></div>
+                <img src="src/assets/Images/baby_stroller_icon.png" alt="Babystroller icon" />
                 </div>
                 <img src="src/assets/Images/full-shot-teacher-helping-girl-learn.jpg" alt="Image a teacher helping a child learn" className="image"/>
             </div>
