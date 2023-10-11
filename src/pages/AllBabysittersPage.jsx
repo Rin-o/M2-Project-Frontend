@@ -49,8 +49,8 @@ const AllBabysittersPage = () => {
           </div>
           <p>IronNanny makes finding a local, trusted nanny, easier than ever.</p>
           <div className="btn-group" role="group" aria-label="Basic example">
-          <button type='button' className="btn btn-secondary" onClick={() => handleSortByAge()}>Sort by age</button>
-          <button type='button' className="btn btn-secondary" onClick={() => handleSortByExperience()}>Sort by experience</button>
+          <button type='button' className="btnNav" onClick={() => handleSortByAge()}>Sort by age</button>
+          <button type='button' className="btnNav" onClick={() => handleSortByExperience()}>Sort by experience</button>
           </div>
           <ul style={{listStyle: 'none', display: 'grid', gridTemplate: 'auto / repeat(3, 1fr)',
           gap: '1rem', padding: '0 1rem',}}>
@@ -62,12 +62,14 @@ const AllBabysittersPage = () => {
                 }}>
                   <Link style={{textDecoration: 'none'}} to={`/babysitters/${el.id}`}>
                     <div className="font-container">
-                    <div className="hoverImg"><figure><img src={el.picture}/></figure></div>
+                    <img className="nannyPic" src={el.picture}/>
+                    <div >
                       <h3>{el.name.first}</h3>
                       <p>{el.age} years old</p>
                       <p>{el.experience} years of experience</p>
-                      <p>£{el.cost} per hour</p>
+                      <p className="whiteBox">£{el.cost} per hour</p>
                     </div>
+                  </div>
                   </Link>
                 </li>
               ))}

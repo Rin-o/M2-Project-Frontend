@@ -95,6 +95,73 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
         <div className="container">
         <form  className="row g-3" onSubmit={onSubmit}>
         
+<<<<<<< HEAD
+=======
+        <div className="col-md-6">
+          <label htmlFor="inputFirstName" className="form-label">
+            First Name
+            <input type="name" className="form-control" id="inputFirstName" value={firstName} onChange={event => setFirstName(event.target.value)}  />
+          </label>
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="inputLastName" className="form-label">
+            Last Name
+            <input type="name" className="form-control" id="inputLastName" value={lastName} onChange={event => setLastName(event.target.value)}  />
+          </label>
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="inputGender" className="form-label">
+            I am 
+            <select id="inputGender" className="form-select" value={gender} onChange={event => setGender(event.target.value)} >
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            </select>
+          </label>
+          </div>
+
+        <div className="col-md-6">
+          <label htmlFor="inputAge" className="form-label">
+            Age
+            <input className="form-control" id="inputAge" type='number' value={age} onChange={event => setAge(event.target.value)}  />
+          </label>
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="inputExperience" className="form-label">
+            Experience
+            <input className="form-control" id="inputExperience" type='number' value={experience} onChange={event => setExperience(event.target.value)}/>
+          </label>
+          <label htmlFor="inputCost" className="form-label">
+            Hourly rate (£)
+            <input className="form-control" id="inputCost" type='number' value={cost} onChange={event => setCost(event.target.value)}/>
+          </label>
+        </div>
+
+        
+
+        <div className="col-md-6">
+          <label htmlFor="inputStreetNumber" className="form-label">
+            Street Number
+            <input type="text" className="form-control" id="inputStreetNumber" value={streetNumber} onChange={event => setStreetNumber(event.target.value)}  />
+          </label>
+        </div>
+        <div className="col-md-6">
+          <label htmlFor="inputStreetName" className="form-label">
+            Street Name
+            <input type="text" className="form-control" id="inputStreetName" value={streetName} onChange={event => setStreetName(event.target.value)}  />
+          </label>
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="inputCityName" className="form-label">
+            City Name
+            <input type="text" className="form-control" id="inputCityName" value={cityName} onChange={event => setCityName(event.target.value)}  />
+          </label>
+        </div>
+
+>>>>>>> 5aeecb5 (css updated on add nanny page)
           <div className="col-md-6">
             <label htmlFor="inputFirstName" className="form-label">
               First Name

@@ -45,8 +45,8 @@ const BabysitterDetailsPage = () => {
           <h4>{babysitter.experience} years of experience</h4>
           <p>£{babysitter.cost} per hour</p>
 
-          <div style={{display: 'flex', alignItems:'center'}}>
-            <div style={{display: 'flex', flexDirection: 'column', textAlign: 'left'}}>
+          <div className="nannyInfo" style={{display: 'flex', alignItems:'center'}}>
+            <div className="nannyInfo" style={{display: 'flex', flexDirection: 'column', textAlign: 'left'}}>
               <h5>Age:</h5>
               <p className="whiteBox">{babysitter.age} years-old</p>
               <h5>Telephone:</h5>
@@ -57,13 +57,11 @@ const BabysitterDetailsPage = () => {
               <p className="whiteBox">{babysitter.location.streetNumber} {babysitter.location.streetName}
               <br/ >{babysitter.location.postcode} {babysitter.location.city}</p>
             </div>
-            <div style={{textAlign:'justify', marginLeft:'3rem'}}>
-              <h3>Description</h3>
-              <p>{babysitter.description}</p>
+            <div  className="nannyInfo" style={{textAlign:'justify', marginLeft:'3rem'}}>
+            <h3>Description:</h3>
+              <p className="whiteBox">{babysitter.description}</p>
               <h3>Availability</h3>
               <AvailabilityPage />                          
-              <h3>Description:</h3>
-              <p className="whiteBox">{babysitter.description}</p>
             </div>
           </div>
           <button type='button' className="btnNav">Send an email</button>

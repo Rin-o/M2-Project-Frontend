@@ -1,6 +1,7 @@
 import './App.css'
 import {Routes, Route} from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Footer from './components/footer'
 import HomePage from './pages/HomePage'
 import AllBabysittersPage from './pages/AllBabysittersPage'
 import BabysitterDetailsPage from './pages/BabysitterDetailsPage'
@@ -25,9 +26,8 @@ function App() {
       
       <Route path='*' element={<h1>404 Page</h1>}></Route>
     </Routes>
-    <footer>
-      <p>©2023 All Right Reserved by Alice and Rino</p>
-      </footer>
+    <Footer />
+      
 
     </div>
   );
