@@ -19,6 +19,7 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
   const [description, setDescription] = useState('')
   const [picture, setPicture] = useState('')
   const [experience, setExperience] = useState(0)
+  const [cost, setCost] = useState(0)
 
   const onSubmit = async event => {
     event.preventDefault()
@@ -31,6 +32,7 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
       password, 
       location: {streetNumber, streetName, city: cityName, postcode}, 
       experience,
+      cost,
       description, 
       picture,
       id: uuidv4()}
@@ -72,7 +74,8 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
       setPhone(babysitter.phone) //telephone
       setPassword(babysitter.password)
       setPicture(babysitter.picture) //largePic
-      setExperience(babysitter.experience) //registered
+      setExperience(babysitter.experience)
+      setCost(babysitter.cost) //registered
     }
   }, [babysitter])
 
@@ -131,6 +134,10 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
           <label>
             Experience
             <input type='number' value={experience} onChange={event => setExperience(event.target.value)}/>
+          </label>
+          <label>
+            Cost
+            <input type='number' value={cost} onChange={event => setCost(event.target.value)}/>
           </label>
           <label>
             Description
