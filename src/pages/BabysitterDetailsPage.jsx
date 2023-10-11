@@ -37,6 +37,8 @@ const BabysitterDetailsPage = () => {
           <img className="nannyPic" src={babysitter.picture}/>
           <h1>{babysitter.name.first} {babysitter.name.last}</h1>
           <h4>{babysitter.experience} years of experience</h4>
+          <p>£{babysitter.cost} per hour</p>
+
           <div style={{display: 'flex', alignItems:'center'}}>
             <div style={{display: 'flex', flexDirection: 'column', textAlign: 'left'}}>
               <h5>Age:</h5>

@@ -21,6 +21,7 @@ const UpdatePage = () => {
     const [description, setDescription] = useState('')
     const [picture, setPicture] = useState('')
     const [experience, setExperience] = useState(0)
+    const [cost, setCost] = useState(0)
     
     const onSubmit = async event => {
         event.preventDefault()
@@ -33,6 +34,7 @@ const UpdatePage = () => {
           password, 
           location: {streetNumber, streetName, city: cityName, postcode}, 
           experience,
+          cost,
           description, 
           picture,
           id: uuidv4()}
@@ -65,7 +67,7 @@ const UpdatePage = () => {
         )
         if (response.ok) {
             const babysitter = await response.json()
-console.log(babysitter)
+
             setFirstName(babysitter.name.first)
             setLastName(babysitter.name.last)
             setGender(babysitter.gender)
@@ -80,6 +82,7 @@ console.log(babysitter)
             setPassword(babysitter.password? babysitter.password : '')
             setPicture(babysitter.picture) 
             setExperience(babysitter.experience) 
+            setCost(babysitter.cost)
         }
     }
 
@@ -157,6 +160,10 @@ console.log(babysitter)
           <label>
             Experience
             <input type='number' value={experience} onChange={event => setExperience(event.target.value)}/>
+          </label>
+          <label>
+            Cost
+            <input type='number' value={cost} onChange={event => setCost(event.target.value)}/>
           </label>
           <label>
             Description
