@@ -41,8 +41,8 @@ const BabysitterDetailsPage = () => {
           <img src={cloudImage} alt="cloud icon" className="cloud"/>
           </div>
           <h1 className="fontColor">{babysitter.name.first} {babysitter.name.last}</h1>
-          <h4 className="fontColor">{babysitter.experience} years of experience</h4>
-          <p className="fontColor">£{babysitter.cost} per hour</p>
+          <h4>{babysitter.experience} years of experience</h4>
+          <h5>£{babysitter.cost} per hour</h5>
 
           <div className="nannyInfo" style={{display: 'flex', alignItems:'center'}}>
             <div className="nannyInfo" style={{display: 'flex', flexDirection: 'column', textAlign: 'left'}}>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
-import nannyImage2 from '../assets/Images/full-shot-teacher-watching-little-kids-play.jpg'
+import cloudImage from '../assets/Images/cloud_icon.png'
 
 const AddBabysitterPage = ({ isUpdate, babysitter }) => {
   const navigate = useNavigate()
@@ -162,174 +162,179 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
 
   return (
     <div >
-      <h1 className="fontColor">Are you a nanny?</h1>
+      <div className="twoClouds">
+        <img src={cloudImage} alt="cloud icon" className="cloud" />
+        <h1 className="fontColor">Are you a nanny?</h1>
+        <img src={cloudImage} alt="cloud icon" className="cloud" />
+      </div>
       <p>Only a few clicks away to register...350,000 people said they would recommend this website to their friends/families.</p>
       <p>I promise, you won't be disappointed!</p>
-          <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
 
-           <div className="formAddNew">
-            <div className="row g-3">
+        <div className="formAddNew">
+          <div className="row g-3">
 
-              <div className="col-md-6">
-                <input placeholder="First Name" type="name" className="form-control" id="inputFirstName" value={firstName} onChange={event => setFirstName(event.target.value)} />
-              </div>
-
-              <div className="col-md-6">
-                <input placeholder="Last Name" type="name" className="form-control" id="inputLastName" value={lastName} onChange={event => setLastName(event.target.value)} />
-              </div>
-
-              <div className="col-md-6">
-                <select id="inputGender" className="form-select" value={gender} onChange={event => setGender(event.target.value)}>
-                  <option value="male">I am male</option>
-                  <option value="female">I am female</option>
-                </select>
-              </div>
-
-              <div className="col-md-6">
-                <input placeholder="Email" type="text" className="form-control" id="inputEmail" value={email} onChange={event => setEmail(event.target.value)} />
-              </div>
-
-              <div className="col-md-12">
-                <input placeholder="Telephone" type="text" className="form-control" id="inputTelephone" value={phone} onChange={event => setPhone(event.target.value)} />
-              </div>
-
-              <div className="col-md-6">
-                <input placeholder="Password" type="text" className="form-control" id="inputPassword" value={password} onChange={event => setPassword(event.target.value)} />
-              </div>
-
-              <div className="col-md-6">
-                <input placeholder="Street Number" type="text" className="form-control" id="inputStreetNumber" value={streetNumber} onChange={event => setStreetNumber(event.target.value)} />
-              </div>
-
-              <div className="col-md-6">
-                <input placeholder="Street Name" type="text" className="form-control" id="inputStreetName" value={streetName} onChange={event => setStreetName(event.target.value)} />
-              </div>
-
-              <div className="col-md-6">
-                <input placeholder="Postcode" type="text" className="form-control" id="inputPostcode" value={postcode} onChange={event => setPostcode(event.target.value)} />
-              </div>
-
-              <div className="col-md-6">
-                <input placeholder="City Name" type="text" className="form-control" id="inputCityName" value={cityName} onChange={event => setCityName(event.target.value)} />
-              </div>
-
-              <div className="col-md-6">
-                <textarea placeholder="Description" type='text' className="form-control" id="inputDescription" value={description} onChange={event => setDescription(event.target.value)} />
-              </div>
-
-              <div className="col-md-6">
-                <label htmlFor="inputAge" className="form-label">
-                  Age
-                  <input className="form-control" id="inputAge" type='number' value={age} onChange={event => setAge(event.target.value)} />
-                </label>
-              </div>
-
-              <div className="col-md-6">
-                <label htmlFor="inputExperience" className="form-label">
-                  Experience
-                  <input className="form-control" id="inputExperience" type='number' value={experience} onChange={event => setExperience(event.target.value)} />
-                </label>
-              </div>
-
-              <div className="col-md-6">
-                <label htmlFor="inputCost" className="form-label">
-                  Hourly rate (£)
-                  <input className="form-control" id="inputCost" type='number' value={cost} onChange={event => setCost(event.target.value)} />
-                </label>
-              </div>
-
-              <div className="col-md-6">
-                <label htmlFor="inputPicture" className="form-label">
-                  Profile Picture
-                  <input className="form-control" id="inputPicture" type="file" accept="image/*" value={picture} onChange={event => setPicture(event.target.value)} />
-                </label>
-              </div>
-
+            <div className="col-md-6">
+              <input placeholder="First Name" type="name" className="form-control" id="inputFirstName" value={firstName} onChange={event => setFirstName(event.target.value)} />
             </div>
 
-            <div className="tbl-header">
-              <h3 className="fontColor">Availability</h3>
-              <label>
-                <table>
-                  <thead>
-                    <tr className="border-top">
-                      <th>Day</th>
-                      <th>Morning</th>
-                      <th>Afternoon</th>
-                    </tr>
-                  </thead>
-                  <tbody className="tbl-content">
-                    <tr className="border-top">
-                      <td>Monday</td>
-                      <td>
-                        <input type="checkbox" name='monday-morning' checked={monday.morning} onChange={handleChange} />
-                      </td>
-                      <td>
-                        <input type="checkbox" name='monday-afternoon' checked={monday.afternoon} onChange={handleChange} />
-                      </td>
-                    </tr>
-                    <tr className="border-top">
-                      <td>Tuesday</td>
-                      <td>
-                        <input type="checkbox" name='tuesday-morning' checked={tuesday.morning} onChange={handleChange} />
-                      </td>
-                      <td>
-                        <input type="checkbox" name='tuesday-afternoon' checked={tuesday.afternoon} onChange={handleChange} />
-                      </td>
-                    </tr>
-                    <tr className="border-top">
-                      <td>Wednesday</td>
-                      <td>
-                        <input type="checkbox" name='wednesday-morning' checked={wednesday.morning} onChange={handleChange} />
-                      </td>
-                      <td>
-                        <input type="checkbox" name='wednesday-afternoon' checked={wednesday.afternoon} onChange={handleChange} />
-                      </td>
-                    </tr>
-                    <tr className="border-top">
-                      <td>Thursday</td>
-                      <td>
-                        <input type="checkbox" name='thursday-morning' checked={thursday.morning} onChange={handleChange} />
-                      </td>
-                      <td>
-                        <input type="checkbox" name='thursday-afternoon' checked={thursday.afternoon} onChange={handleChange} />
-                      </td>
-                    </tr>
-                    <tr className="border-top">
-                      <td>Friday</td>
-                      <td>
-                        <input type="checkbox" name='friday-morning' checked={friday.morning} onChange={handleChange} />
-                      </td>
-                      <td>
-                        <input type="checkbox" name='friday-afternoon' checked={friday.afternoon} onChange={handleChange} />
-                      </td>
-                    </tr>
-                    <tr className="border-top">
-                      <td>Saturday</td>
-                      <td>
-                        <input type="checkbox" name='saturday-morning' checked={saturday.morning} onChange={handleChange} />
-                      </td>
-                      <td>
-                        <input type="checkbox" name='saturday-afternoon' checked={saturday.afternoon} onChange={handleChange} />
-                      </td>
-                    </tr>
-                    <tr className="border-top">
-                      <td>Sunday</td>
-                      <td>
-                        <input type="checkbox" name='sunday-morning' checked={sunday.morning} onChange={handleChange} />
-                      </td>
-                      <td>
-                        <input type="checkbox" name='sunday-afternoon' checked={sunday.afternoon} onChange={handleChange} />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+            <div className="col-md-6">
+              <input placeholder="Last Name" type="name" className="form-control" id="inputLastName" value={lastName} onChange={event => setLastName(event.target.value)} />
+            </div>
+
+            <div className="col-md-6">
+              <select id="inputGender" className="form-select" value={gender} onChange={event => setGender(event.target.value)}>
+                <option value="female">I am female</option>
+                <option value="male">I am male</option>
+              </select>
+            </div>
+
+            <div className="col-md-6">
+              <input placeholder="Email" type="text" className="form-control" id="inputEmail" value={email} onChange={event => setEmail(event.target.value)} />
+            </div>
+
+            <div className="col-md-6">
+              <input placeholder="Password" type="text" className="form-control" id="inputPassword" value={password} onChange={event => setPassword(event.target.value)} />
+            </div>
+
+            <div className="col-md-6">
+              <input placeholder="Telephone" type="text" className="form-control" id="inputTelephone" value={phone} onChange={event => setPhone(event.target.value)} />
+            </div>
+
+            <div className="col-md-6">
+              <label htmlFor="inputAge" className="form-label">
+                Age
+                <input className="form-control" id="inputAge" type='number' value={age} onChange={event => setAge(event.target.value)} />
               </label>
             </div>
+
+            <div className="col-md-6">
+              <label htmlFor="inputExperience" className="form-label">
+                Experience
+                <input className="form-control" id="inputExperience" type='number' value={experience} onChange={event => setExperience(event.target.value)} />
+              </label>
+            </div>
+
+            <div className="col-md-6">
+              <label htmlFor="inputCost" className="form-label">
+                Hourly rate (£)
+                <input className="form-control" id="inputCost" type='number' value={cost} onChange={event => setCost(event.target.value)} />
+              </label>
+            </div>
+
+            <div className="col-md-6">
+              <label htmlFor="inputPicture" className="form-label">
+                Profile Picture
+                <input className="form-control" id="inputPicture" type="file" accept="image/*" value={picture} onChange={event => setPicture(event.target.value)} />
+              </label>
+            </div>
+
+
+            <div className="col-md-6">
+              <input placeholder="Street Number" type="text" className="form-control" id="inputStreetNumber" value={streetNumber} onChange={event => setStreetNumber(event.target.value)} />
+            </div>
+
+            <div className="col-md-6">
+              <input placeholder="Street Name" type="text" className="form-control" id="inputStreetName" value={streetName} onChange={event => setStreetName(event.target.value)} />
+            </div>
+
+            <div className="col-md-6">
+              <input placeholder="Postcode" type="text" className="form-control" id="inputPostcode" value={postcode} onChange={event => setPostcode(event.target.value)} />
+            </div>
+
+            <div className="col-md-6">
+              <input placeholder="City Name" type="text" className="form-control" id="inputCityName" value={cityName} onChange={event => setCityName(event.target.value)} />
+            </div>
+
+            <div className="col-md-12">
+              <textarea placeholder="Description" type='text' className="form-control" id="inputDescription" value={description} onChange={event => setDescription(event.target.value)} />
+            </div>
+
           </div>
-          <button className="btnNav" type="submit">Create your account</button>
-          </form >
+
+          <div className="tbl-header2">
+            <h3 className="fontColor">Availability</h3>
+            <label>
+              <table>
+                <thead>
+                  <tr className="border-top">
+                    <th>Day</th>
+                    <th>Morning</th>
+                    <th>Afternoon</th>
+                  </tr>
+                </thead>
+                <tbody className="tbl-content">
+                  <tr className="border-top">
+                    <td>Monday</td>
+                    <td>
+                      <input type="checkbox" name='monday-morning' checked={monday.morning} onChange={handleChange} />
+                    </td>
+                    <td>
+                      <input type="checkbox" name='monday-afternoon' checked={monday.afternoon} onChange={handleChange} />
+                    </td>
+                  </tr>
+                  <tr className="border-top">
+                    <td>Tuesday</td>
+                    <td>
+                      <input type="checkbox" name='tuesday-morning' checked={tuesday.morning} onChange={handleChange} />
+                    </td>
+                    <td>
+                      <input type="checkbox" name='tuesday-afternoon' checked={tuesday.afternoon} onChange={handleChange} />
+                    </td>
+                  </tr>
+                  <tr className="border-top">
+                    <td>Wednesday</td>
+                    <td>
+                      <input type="checkbox" name='wednesday-morning' checked={wednesday.morning} onChange={handleChange} />
+                    </td>
+                    <td>
+                      <input type="checkbox" name='wednesday-afternoon' checked={wednesday.afternoon} onChange={handleChange} />
+                    </td>
+                  </tr>
+                  <tr className="border-top">
+                    <td>Thursday</td>
+                    <td>
+                      <input type="checkbox" name='thursday-morning' checked={thursday.morning} onChange={handleChange} />
+                    </td>
+                    <td>
+                      <input type="checkbox" name='thursday-afternoon' checked={thursday.afternoon} onChange={handleChange} />
+                    </td>
+                  </tr>
+                  <tr className="border-top">
+                    <td>Friday</td>
+                    <td>
+                      <input type="checkbox" name='friday-morning' checked={friday.morning} onChange={handleChange} />
+                    </td>
+                    <td>
+                      <input type="checkbox" name='friday-afternoon' checked={friday.afternoon} onChange={handleChange} />
+                    </td>
+                  </tr>
+                  <tr className="border-top">
+                    <td>Saturday</td>
+                    <td>
+                      <input type="checkbox" name='saturday-morning' checked={saturday.morning} onChange={handleChange} />
+                    </td>
+                    <td>
+                      <input type="checkbox" name='saturday-afternoon' checked={saturday.afternoon} onChange={handleChange} />
+                    </td>
+                  </tr>
+                  <tr className="border-top">
+                    <td>Sunday</td>
+                    <td>
+                      <input type="checkbox" name='sunday-morning' checked={sunday.morning} onChange={handleChange} />
+                    </td>
+                    <td>
+                      <input type="checkbox" name='sunday-afternoon' checked={sunday.afternoon} onChange={handleChange} />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </label>
+          </div>
         </div>
+        <button className="btnNav" type="submit">Create your account</button>
+      </form >
+    </div>
 
 
 

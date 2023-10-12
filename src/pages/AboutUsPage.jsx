@@ -12,7 +12,7 @@ const AboutUsPage = () => {
           <h1 className="fontColor">About Us</h1>
           <img src={cloudImage} alt="cloud icon" className="cloud"/>
           </div>
-        <h3 style={{paddingTop: '1rem', lineHeight:'2em'}}>Welcome to our website!</h3>
+        <h3 style={{paddingTop: '1rem', lineHeight:'2em', color: '#555555',}}>Welcome to our website!</h3>
             <p style={{lineHeight:'2em'}}>We are a mom duo of aspiring developers based in France
             <br />who are enthusiastic about creating innovative web solutions with a seamless user experience.
         </p>

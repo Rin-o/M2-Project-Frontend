@@ -4,11 +4,17 @@
   padding: 0;
 }
 
-p {
+p, h4, h5 {
   text-decoration: none;
   line-height: 1em;
   font-family: 'Nunito Sans', sans-serif;
   font-size: 18px;
+  color: #555555;
+}
+
+h3, h4 {
+  line-height: 1em;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 
@@ -33,7 +39,7 @@ h1 {
   color: #3c55ff;
 }
 
-h2, h3, h4, h5 {
+h2, h3 {
   font-family: 'Shrikhand', serif;
   color: #3c55ff;
 }
@@ -77,9 +83,8 @@ li {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    height:70%;
-    margin: 100px;
+    justify-content: space-evenly;
+    margin: 50px;
 
 }
 
@@ -210,11 +215,21 @@ table{
   table-layout: fixed;
   margin-bottom: 10px;
 }
+
 .tbl-header{
   background-color: #fff;
   opacity: .8;
-  width:40%;
-  margin: 0 30px 0 0;
+  width:100%;
+  margin: 0 0 0 0px;
+  font-weight: 500;
+ }
+
+.tbl-header2{
+  background-color: #fff;
+  opacity: .8;
+  width:200%;
+  margin: 0 0 0 60px;
+  font-weight: 500;
  }
 
 .tbl-content{
@@ -226,9 +241,8 @@ table{
 th{
   padding: 20px 15px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 800;
   font-size: 12px;
-  color: black;
   text-transform: uppercase;
 }
 
