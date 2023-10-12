@@ -331,7 +331,9 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
               </table>
             </label>
           </div>
+
         </div>
+        
         <button className="btnNav" type="submit">Create your account</button>
       </form >
     </div>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
+import cloudImage from '../assets/Images/cloud_icon.png'
+
 
 const UpdatePage = () => {
     
@@ -144,83 +146,108 @@ const UpdatePage = () => {
 
     return ( 
         <div>
-            <form onSubmit={onSubmit} style={{ display: 'grid', gridTemplate: 'auto / 1fr' }}>
-          <label>
-            I am 
-            <select value={gender} onChange={event => setGender(event.target.value)}>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            </select>
-          </label>
-          <label>
-            First Name
-            <input value={firstName} onChange={event => setFirstName(event.target.value)}/>
-          </label>
-          <label>
-            Last Name
-            <input value={lastName} onChange={event => setLastName(event.target.value)}/>
-          </label>
-          <label>
-            Age
-            <input type='number' value={age} onChange={event => setAge(event.target.value)}  />
-          </label>
-          <label>
-            Street Number
-            <input value={streetNumber} onChange={event => setStreetNumber(event.target.value)}/>
-          </label>
-          <label>
-            Street Name
-            <input value={streetName} onChange={event => setStreetName(event.target.value)}/>
-          </label>
-          <label>
-            Postcode
-            <input value={postcode} onChange={event => setPostcode(event.target.value)}/>
-          </label>
-          <label>
-            City Name
-            <input value={cityName} onChange={event => setCityName(event.target.value)}/>
-          </label>
-          <label>
-            Email
-            <input value={email} onChange={event => setEmail(event.target.value)}/>
-          </label>
-          <label>
-            Telephone
-            <input value={phone} onChange={event => setPhone(event.target.value)}  />
-          </label>
-          <label>
-            Password
-            <input value={password} onChange={event => setPassword(event.target.value)}/>
-          </label>
-          <label>
-            Experience
-            <input type='number' value={experience} onChange={event => setExperience(event.target.value)}/>
-          </label>
-          <label>
-            Cost
-            <input type='number' value={cost} onChange={event => setCost(event.target.value)}/>
-          </label>
-          <label>
-            Description
-            <textarea value={description} onChange={event => setDescription(event.target.value)}/>
-          </label>
-          <label>
-            Picture
-            <input value={picture} onChange={event => setPicture(event.target.value)}/>
-          </label>
+          <div className="twoClouds">
+        <img src={cloudImage} alt="cloud icon" className="cloud" />
+        <h1 className="fontColor">Update your profile</h1>
+        <img src={cloudImage} alt="cloud icon" className="cloud" />
+        </div>
+            <form onSubmit={onSubmit}>
 
+            <div className="formAddNew">
+
+            <div className="row g-3">
+
+            <div className="col-md-6">
+              <input placeholder="First Name" type="name" className="form-control" id="inputFirstName" value={firstName} onChange={event => setFirstName(event.target.value)} />
+            </div>
+
+            <div className="col-md-6">
+              <input placeholder="Last Name" type="name" className="form-control" id="inputLastName" value={lastName} onChange={event => setLastName(event.target.value)} />
+            </div>
+
+            <div className="col-md-6">
+              <select id="inputGender" className="form-select" value={gender} onChange={event => setGender(event.target.value)}>
+                <option value="female">I am female</option>
+                <option value="male">I am male</option>
+              </select>
+            </div>
+
+            <div className="col-md-6">
+              <input placeholder="Email" type="text" className="form-control" id="inputEmail" value={email} onChange={event => setEmail(event.target.value)} />
+            </div>
+
+            <div className="col-md-6">
+              <input placeholder="Password" type="text" className="form-control" id="inputPassword" value={password} onChange={event => setPassword(event.target.value)} />
+            </div>
+
+          <div className="col-md-6">
+              <input placeholder="Telephone" type="text" className="form-control" id="inputTelephone" value={phone} onChange={event => setPhone(event.target.value)} />
+            </div>
+
+          <div className="col-md-6">
+              <label htmlFor="inputAge" className="form-label">
+                Age
+                <input className="form-control" id="inputAge" type='number' value={age} onChange={event => setAge(event.target.value)} />
+              </label>
+            </div>
+
+            <div className="col-md-6">
+              <label htmlFor="inputExperience" className="form-label">
+                Experience
+                <input className="form-control" id="inputExperience" type='number' value={experience} onChange={event => setExperience(event.target.value)} />
+              </label>
+            </div>
+
+            <div className="col-md-6">
+              <label htmlFor="inputCost" className="form-label">
+                Hourly rate (£)
+                <input className="form-control" id="inputCost" type='number' value={cost} onChange={event => setCost(event.target.value)} />
+              </label>
+            </div>
+
+            <div className="col-md-6">
+              <label htmlFor="inputPicture" className="form-label">
+                Profile Picture
+                <input className="form-control" id="inputPicture" type="file" accept="image/*" value={picture} onChange={event => setPicture(event.target.value)} />
+              </label>
+            </div>
+
+          <div className="col-md-6">
+              <input placeholder="Street Number" type="text" className="form-control" id="inputStreetNumber" value={streetNumber} onChange={event => setStreetNumber(event.target.value)} />
+            </div>
+
+          <div className="col-md-6">
+              <input placeholder="Street Name" type="text" className="form-control" id="inputStreetName" value={streetName} onChange={event => setStreetName(event.target.value)} />
+            </div>
+
+          <div className="col-md-6">
+              <input placeholder="Postcode" type="text" className="form-control" id="inputPostcode" value={postcode} onChange={event => setPostcode(event.target.value)} />
+            </div>
+
+          <div className="col-md-6">
+              <input placeholder="City Name" type="text" className="form-control" id="inputCityName" value={cityName} onChange={event => setCityName(event.target.value)} />
+            </div>
+
+
+          <div className="col-md-12">
+              <textarea placeholder="Description" type='text' className="form-control" id="inputDescription" value={description} onChange={event => setDescription(event.target.value)} />
+            </div>
+
+        </div>
+
+        <div className="tbl-header2">
           <label>
-              Availability
+          <h3 className="fontColor">Availability</h3>
               <table>
                 <thead>
-                  <tr>
+                <tr className="border-top">
                     <th>Day</th>
                     <th>Morning</th>
                     <th>Afternoon</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
+                <tbody className="tbl-content">
+                  <tr className="border-top">
                     <td>Monday</td>
                     <td>
                         <input type="checkbox" name='monday-morning' checked={monday?.morning} onChange={() => setMonday({ ...monday, ['morning']: !monday.morning })}/>
@@ -229,7 +256,7 @@ const UpdatePage = () => {
                         <input type="checkbox" name='monday-afternoon' checked={monday.afternoon} onChange={() => setMonday({ ...monday, ['afternoon']: !monday.afternoon })}/>
                     </td>
                   </tr>
-                  <tr>
+                  <tr className="border-top">
                     <td>Tuesday</td>
                     <td>
                         <input type="checkbox" name='tuesday-morning' checked={tuesday?.morning} onChange={event => setTuesday({ ...tuesday, ['morning']: !tuesday.morning })}/>
@@ -238,7 +265,7 @@ const UpdatePage = () => {
                         <input type="checkbox" name='tuesday-afternoon' checked={tuesday.afternoon} onChange={event => setTuesday({ ...tuesday, ['afternoon']: !tuesday.afternoon })} />
                     </td>
                   </tr>
-                  <tr>
+                  <tr className="border-top">
                     <td>Wednesday</td>
                     <td>
                         <input type="checkbox" name='wednesday-morning' checked={wednesday?.morning} onChange={event => setWednesday({ ...wednesday, ['morning']: !wednesday.morning })} />
@@ -247,7 +274,7 @@ const UpdatePage = () => {
                         <input type="checkbox" name='wednesday-afternoon' checked={wednesday.afternoon} onChange={event => setWednesday({ ...wednesday, ['afternoon']: !wednesday.afternoon })} />
                     </td>
                   </tr>
-                  <tr>
+                  <tr className="border-top">
                     <td>Thursday</td>
                     <td>
                         <input type="checkbox" name='thursday-morning' checked={thursday?.morning} onChange={event => setThursday({ ...thursday, ['morning']: !thursday.morning })} />
@@ -255,7 +282,8 @@ const UpdatePage = () => {
                     <td>
                         <input type="checkbox" name='thursday-afternoon' checked={thursday.afternoon} onChange={event => setThursday({ ...thursday, ['afternoon']: !thursday.afternoon })} />
                     </td>
-                  </tr><tr>
+                  </tr>
+                  <tr className="border-top">
                     <td>Friday</td>
                     <td>
                         <input type="checkbox" name='friday-morning' checked={friday?.morning} onChange={event => setFriday({ ...friday, ['morning']: !friday.morning })} />
@@ -264,7 +292,7 @@ const UpdatePage = () => {
                         <input type="checkbox" name='friday-afternoon' checked={friday.afternoon} onChange={event => setFriday({ ...friday, ['afternoon']: !friday.afternoon })} />
                     </td>
                   </tr>
-                  <tr>
+                  <tr className="border-top">
                     <td>Saturday</td>
                     <td>
                         <input type="checkbox" name='saturday-morning' checked={saturday?.morning} onChange={event => setSaturday({ ...saturday, ['morning']: !saturday.morning })} />
@@ -273,7 +301,7 @@ const UpdatePage = () => {
                         <input type="checkbox" name='saturday-afternoon' checked={saturday.afternoon} onChange={event => setSaturday({ ...saturday, ['afternoon']: !saturday.afternoon })} />
                     </td>
                   </tr>
-                  <tr>
+                  <tr className="border-top">
                     <td>Sunday</td>
                     <td>
                         <input type="checkbox" name='sunday-morning' checked={sunday?.morning} onChange={event => setSunday({ ...sunday, ['morning']: !sunday.morning })} />
@@ -285,9 +313,13 @@ const UpdatePage = () => {
                 </tbody>
               </table>
             </label>
+            </div>
 
-          <button>Save</button>
-          <button type='button' onClick={()=>{handleDelete(babysitterId)}}>Delete</button>
+        </div>
+
+
+          <button className="btnNav">Save</button>
+          <button className="btnNav" type='button' onClick={()=>{handleDelete(babysitterId)}}>Delete</button>
 
         </form>
         </div>
