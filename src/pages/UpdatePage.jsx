@@ -111,13 +111,13 @@ const UpdatePage = () => {
             setPicture(babysitter.picture) 
             setExperience(babysitter.experience) 
             setCost(babysitter.cost)
-            setMonday(babysitter.availability[0].morning)
-            setTuesday(babysitter.availability[1].morning)
-            setWednesday(babysitter.availability[2].morning)
-            setThursday(babysitter.availability[3].morning)
-            setFriday(babysitter.availability[4].morning)
-            setSaturday(babysitter.availability[5].morning)
-            setSunday(babysitter.availability[6].morning)
+            setMonday({...monday, ['morning']: babysitter.availability[0].morning, ['afternoon']: babysitter.availability[0].afternoon})
+            setTuesday({...tuesday, ['morning']: babysitter.availability[1].morning, ['afternoon']: babysitter.availability[1].afternoon})
+            setWednesday({...wednesday, ['morning']: babysitter.availability[2].morning, ['afternoon']: babysitter.availability[2].afternoon})
+            setThursday({...thursday, ['morning']: babysitter.availability[3].morning, ['afternoon']: babysitter.availability[3].afternoon})
+            setFriday({...friday, ['morning']: babysitter.availability[4].morning, ['afternoon']: babysitter.availability[4].afternoon})
+            setSaturday({...saturday, ['morning']: babysitter.availability[5].morning, ['afternoon']: babysitter.availability[5].afternoon})
+            setSunday({...sunday, ['morning']: babysitter.availability[6].morning, ['afternoon']: babysitter.availability[6].afternoon})
         }
     }
 
@@ -140,7 +140,7 @@ const UpdatePage = () => {
       }
     }
 
-    
+    console.log(monday)
 
     return ( 
         <div>
@@ -223,63 +223,63 @@ const UpdatePage = () => {
                   <tr>
                     <td>Monday</td>
                     <td>
-                        <input value={monday?.morning} type="checkbox" name='monday-morning' checked={monday?.morning} onChange={event => setMonday(event.target.value)}/>
+                        <input type="checkbox" name='monday-morning' checked={monday?.morning} onChange={() => setMonday({ ...monday, ['morning']: !monday.morning })}/>
                     </td>
                     <td>
-                        <input value={monday?.afternoon} type="checkbox" name='monday-afternoon' /*checked={monday.afternoon}*/ onChange={event => setMonday(event.target.value)}/>
+                        <input type="checkbox" name='monday-afternoon' checked={monday.afternoon} onChange={() => setMonday({ ...monday, ['afternoon']: !monday.afternoon })}/>
                     </td>
                   </tr>
                   <tr>
                     <td>Tuesday</td>
                     <td>
-                        <input value={tuesday?.morning} type="checkbox" name='tuesday-morning' onChange={event => setMonday(event.target.value)}/>
+                        <input type="checkbox" name='tuesday-morning' checked={tuesday?.morning} onChange={event => setTuesday({ ...tuesday, ['morning']: !tuesday.morning })}/>
                     </td>
                     <td>
-                        <input value={tuesday?.afternoon} type="checkbox" name='tuesday-afternoon' onChange={event => setMonday(event.target.value)} />
+                        <input type="checkbox" name='tuesday-afternoon' checked={tuesday.afternoon} onChange={event => setTuesday({ ...tuesday, ['afternoon']: !tuesday.afternoon })} />
                     </td>
                   </tr>
                   <tr>
                     <td>Wednesday</td>
                     <td>
-                        <input value={wednesday?.morning} type="checkbox" name='wednesday-morning' onChange={event => setMonday(event.target.value)} />
+                        <input type="checkbox" name='wednesday-morning' checked={wednesday?.morning} onChange={event => setWednesday({ ...wednesday, ['morning']: !wednesday.morning })} />
                     </td>
                     <td>
-                        <input value={wednesday?.afternoon} type="checkbox" name='wednesday-afternoon' onChange={event => setMonday(event.target.value)} />
+                        <input type="checkbox" name='wednesday-afternoon' checked={wednesday.afternoon} onChange={event => setWednesday({ ...wednesday, ['afternoon']: !wednesday.afternoon })} />
                     </td>
                   </tr>
                   <tr>
                     <td>Thursday</td>
                     <td>
-                        <input value={thursday?.morning} type="checkbox" name='thursday-morning' onChange={event => setMonday(event.target.value)} />
+                        <input type="checkbox" name='thursday-morning' checked={thursday?.morning} onChange={event => setThursday({ ...thursday, ['morning']: !thursday.morning })} />
                     </td>
                     <td>
-                        <input value={thursday?.afternoon} type="checkbox" name='thursday-afternoon' onChange={event => setMonday(event.target.value)} />
+                        <input type="checkbox" name='thursday-afternoon' checked={thursday.afternoon} onChange={event => setThursday({ ...thursday, ['afternoon']: !thursday.afternoon })} />
                     </td>
                   </tr><tr>
                     <td>Friday</td>
                     <td>
-                        <input value={friday?.morning} type="checkbox" name='friday-morning' onChange={event => setMonday(event.target.value)} />
+                        <input type="checkbox" name='friday-morning' checked={friday?.morning} onChange={event => setFriday({ ...friday, ['morning']: !friday.morning })} />
                     </td>
                     <td>
-                        <input value={friday?.afternoon} type="checkbox" name='friday-afternoon' onChange={event => setMonday(event.target.value)} />
+                        <input type="checkbox" name='friday-afternoon' checked={friday.afternoon} onChange={event => setFriday({ ...friday, ['afternoon']: !friday.afternoon })} />
                     </td>
                   </tr>
                   <tr>
                     <td>Saturday</td>
                     <td>
-                        <input value={saturday?.morning} type="checkbox" name='saturday-morning' onChange={event => setMonday(event.target.value)} />
+                        <input type="checkbox" name='saturday-morning' checked={saturday?.morning} onChange={event => setSaturday({ ...saturday, ['morning']: !saturday.morning })} />
                     </td>
                     <td>
-                        <input value={saturday?.afternoon} type="checkbox" name='saturday-afternoon' onChange={event => setMonday(event.target.value)} />
+                        <input type="checkbox" name='saturday-afternoon' checked={saturday.afternoon} onChange={event => setSaturday({ ...saturday, ['afternoon']: !saturday.afternoon })} />
                     </td>
                   </tr>
                   <tr>
                     <td>Sunday</td>
                     <td>
-                        <input value={sunday?.morning} type="checkbox" name='sunday-morning' onChange={event => setMonday(event.target.value)} />
+                        <input type="checkbox" name='sunday-morning' checked={sunday?.morning} onChange={event => setSunday({ ...sunday, ['morning']: !sunday.morning })} />
                     </td>
                     <td>
-                        <input value={sunday?.afternoon} type="checkbox" name='sunday-afternoon' onChange={event => setMonday(event.target.value)} />
+                        <input type="checkbox" name='sunday-afternoon' checked={sunday.afternoon} onChange={event => setSunday({ ...sunday, ['afternoon']: !sunday.afternoon })} />
                     </td>
                   </tr>
                 </tbody>
