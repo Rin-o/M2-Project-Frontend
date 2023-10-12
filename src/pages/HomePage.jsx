@@ -6,8 +6,11 @@ const HomePage = () => {
         <>
             <div className="container">
                 <div className="textHomepage">
-                <h1 className="font-container">Exceptional child care and early learning for today's families.</h1>
-                <p>With warm, experienced nannies, full-day schedules, rolling admissions and a world-class curriculum, IronNanny meets you where you are.</p>
+                <h1 style={{lineHeight: '2em'}} className="font-container">Exceptional child care and
+                <br/>early learning for today's families.</h1>
+                <p style={{paddingTop: '4rem', lineHeight:'2em'}}>With warm, experienced nannies, full-day schedules,
+                    <br />rolling admissions and a world-class curriculum,
+                    <br />IronNanny meets you where you are.</p>
                 <img src={cloudImage} alt="cloud icon" className="cloud"/>
                 </div>
                 <img src={nannyImage} alt="Image a teacher helping a child learn" className="imageRectangle"/>

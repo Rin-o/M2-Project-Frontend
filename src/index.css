@@ -7,6 +7,8 @@
 p {
   text-decoration: none;
   line-height: 1em;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 18px;
 }
 
 
@@ -27,20 +29,19 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  font-family: 'Saira', sans-serif;
+  font-family: 'Shrikhand', serif;
   color: #3c55ff;
 }
 
 h2, h3, h4, h5 {
-  font-family: 'Saira', sans-serif;
+  font-family: 'Shrikhand', serif;
   color: #3c55ff;
 }
 
 .fontColor {
 
   font-family: 'Shrikhand', serif;
-
-    color: #3c55ff;
+  color: #3c55ff;
 }
 
 .whiteBox {
@@ -49,7 +50,7 @@ h2, h3, h4, h5 {
 }
 
 .font-container {
-  font-family: 'Saira', sans-serif;
+  font-family: 'Shrikhand', serif;
   color: #3c55ff;
   display: flex;
   flex-direction: row;
@@ -97,6 +98,7 @@ li {
   margin: 0;
   padding: 0;
   background: #fce4de;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .imageRectangle {
@@ -165,7 +167,7 @@ li {
   color: #3c55ff;
   cursor: pointer;
   display: inline-block;
-  font-family: 'Saira', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1;
@@ -194,10 +196,11 @@ li {
 
 form {
   width: 100%;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 footer {
-  font-family: 'Saira', sans-serif;
+  font-family: 'Shrikhand', serif;
   margin-top: 0;
   padding: 0;
 }

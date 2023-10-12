@@ -12,11 +12,13 @@ const AboutUsPage = () => {
           <h1 className="fontColor">About Us</h1>
           <img src={cloudImage} alt="cloud icon" className="cloud"/>
           </div>
-        <p>Welcome to our website!
-            <br />We are a mom duo of aspiring developers based in France who are enthusiastic about creating innovative web solutions with a seamless user experience.
+        <h3 style={{paddingTop: '1rem', lineHeight:'2em'}}>Welcome to our website!</h3>
+            <p style={{lineHeight:'2em'}}>We are a mom duo of aspiring developers based in France
+            <br />who are enthusiastic about creating innovative web solutions with a seamless user experience.
         </p>
-        <p>With a shared passion for design, coding, and technology, we have joined forces to bring our skills and creativity together.</p>
-        <p>Want to achive digital transformation? <a href="">Contact us!</a></p>
+        <p style={{lineHeight:'2em'}}>With a shared passion for design, coding, and technology,
+        <br/>we have joined forces to bring our skills and creativity together.</p>
+        <p style={{lineHeight:'2em'}}>Want to achive digital transformation? <a href="">Contact us!</a></p>
       </div>
       <div>
         <a href="https://www.linkedin.com/in/alice-pennec-4812a851/" target="_blank"><img className="foundersPic" src={alicePic} alt="IronNanny founder Alice"/></a>
