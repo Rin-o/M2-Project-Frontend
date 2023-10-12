@@ -49,7 +49,7 @@ const AllBabysittersPage = () => {
         <div className="otherContainer">
           <div className="twoClouds">
           <img src={cloudImage} alt="cloud icon" className="cloud"/>
-          <h1 className="font-container" style={{textAlign: 'center'}}>Our Nannys</h1>
+          <h1 className="fontColor" style={{textAlign: 'center'}}>Our Nannys</h1>
           <img src={cloudImage} alt="cloud icon" className="cloud"/>
           </div>
           <p>IronNanny makes finding a local, trusted nanny, easier than ever.</p>
@@ -58,7 +58,7 @@ const AllBabysittersPage = () => {
           <button type='button' className="btnNav" onClick={() => handleSortByExperience()}>Sort by experience</button>
           <button type='button' className="btnNav" onClick={() => handleSortByCost()}>Sort by hourly rate</button>
           </div>
-          <ul style={{listStyle: 'none', display: 'grid', gridTemplate: 'auto / repeat(3, 1fr)',
+          <ul className="container" style={{listStyle: 'none', display: 'grid', gridTemplate: 'auto / repeat(3, 1fr)',
           gap: '1rem', padding: '0 1rem',}}>
               {babysitters.map(el => (
                 <li key={el.id} style={{

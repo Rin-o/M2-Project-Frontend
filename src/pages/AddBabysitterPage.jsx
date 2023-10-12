@@ -161,11 +161,13 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
    }, [babysitter])*/
 
   return (
-    <div className="otherContainer">
+    <div >
       <h1 className="fontColor">Are you a nanny?</h1>
       <p>Only a few clicks away to register...350,000 people said they would recommend this website to their friends/families.</p>
       <p>I promise, you won't be disappointed!</p>
           <form className="row g-3" onSubmit={onSubmit}>
+
+           <div className="formAddNew">
             <div>
 
               <div className="col-md-6">
@@ -187,12 +189,32 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
                 <input placeholder="Email" type="text" className="form-control" id="inputEmail" value={email} onChange={event => setEmail(event.target.value)} />
               </div>
 
-              <div className="col-md-6">
+              <div className="col-md-12">
                 <input placeholder="Telephone" type="text" className="form-control" id="inputTelephone" value={phone} onChange={event => setPhone(event.target.value)} />
               </div>
 
               <div className="col-md-6">
                 <input placeholder="Password" type="text" className="form-control" id="inputPassword" value={password} onChange={event => setPassword(event.target.value)} />
+              </div>
+
+              <div className="col-md-6">
+                <input placeholder="Street Number" type="text" className="form-control" id="inputStreetNumber" value={streetNumber} onChange={event => setStreetNumber(event.target.value)} />
+              </div>
+
+              <div className="col-md-6">
+                <input placeholder="Street Name" type="text" className="form-control" id="inputStreetName" value={streetName} onChange={event => setStreetName(event.target.value)} />
+              </div>
+
+              <div className="col-md-6">
+                <input placeholder="Postcode" type="text" className="form-control" id="inputPostcode" value={postcode} onChange={event => setPostcode(event.target.value)} />
+              </div>
+
+              <div className="col-md-6">
+                <input placeholder="City Name" type="text" className="form-control" id="inputCityName" value={cityName} onChange={event => setCityName(event.target.value)} />
+              </div>
+
+              <div className="col-md-6">
+                <textarea placeholder="Description" type='text' className="form-control" id="inputDescription" value={description} onChange={event => setDescription(event.target.value)} />
               </div>
 
               <div className="col-md-6">
@@ -221,26 +243,6 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
                   Profile Picture
                   <input className="form-control" id="inputPicture" type="file" accept="image/*" value={picture} onChange={event => setPicture(event.target.value)} />
                 </label>
-              </div>
-
-              <div className="col-md-6">
-                <input placeholder="Street Number" type="text" className="form-control" id="inputStreetNumber" value={streetNumber} onChange={event => setStreetNumber(event.target.value)} />
-              </div>
-
-              <div className="col-md-6">
-                <input placeholder="Street Name" type="text" className="form-control" id="inputStreetName" value={streetName} onChange={event => setStreetName(event.target.value)} />
-              </div>
-
-              <div className="col-md-6">
-                <input placeholder="Postcode" type="text" className="form-control" id="inputPostcode" value={postcode} onChange={event => setPostcode(event.target.value)} />
-              </div>
-
-              <div className="col-md-6">
-                <input placeholder="City Name" type="text" className="form-control" id="inputCityName" value={cityName} onChange={event => setCityName(event.target.value)} />
-              </div>
-
-              <div className="col-md-12">
-                <textarea placeholder="Description" type='text' className="form-control" id="inputDescription" value={description} onChange={event => setDescription(event.target.value)} />
               </div>
 
             </div>
@@ -324,10 +326,15 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
                 </table>
               </label>
             </div>
-            <button className="btnNav" type="submit">Create your account</button>
-
+          </div>
+          <button className="btnNav" type="submit">Create your account</button>
           </form >
         </div>
+
+
+
+
+
   )
 }
 
