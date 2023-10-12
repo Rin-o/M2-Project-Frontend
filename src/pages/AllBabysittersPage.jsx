@@ -35,6 +35,12 @@ const AllBabysittersPage = () => {
         setBabysitters(copyBabysitters);
       }
 
+      const handleSortByCost = () => {
+        const copyBabysitters = [...babysitters];
+        copyBabysitters.sort ((user1, user2) => user1.cost > user2.cost ? 1 : -1)
+        setBabysitters(copyBabysitters);
+      }
+
      /*const  addNewBabysitter = (newBabysitter) => {
       setBabysitters([newBabysitter, ...babysitters])
       }*/
@@ -50,6 +56,7 @@ const AllBabysittersPage = () => {
           <div className="btn-group" role="group" aria-label="Basic example">
           <button type='button' className="btnNav" onClick={() => handleSortByAge()}>Sort by age</button>
           <button type='button' className="btnNav" onClick={() => handleSortByExperience()}>Sort by experience</button>
+          <button type='button' className="btnNav" onClick={() => handleSortByCost()}>Sort by hourly rate</button>
           </div>
           <ul style={{listStyle: 'none', display: 'grid', gridTemplate: 'auto / repeat(3, 1fr)',
           gap: '1rem', padding: '0 1rem',}}>
