@@ -58,13 +58,13 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
       cost,
       description, 
       picture,
-      availability: [{day:monday.day, morning: monday.morning, afternoon: monday.afternoon},
-        {day: tuesday, morning: tuesday.morning, afternoon: tuesday.afternoon},
-        {day: wednesday, morning: wednesday.morning, afternoon: wednesday.afternoon},
-        {day: thursday, morning: thursday.morning, afternoon: thursday.afternoon},
-        {day: friday, morning: friday.morning, afternoon: friday.afternoon},
-        {day: saturday, morning: saturday.morning, afternoon: saturday.afternoon},
-        {day: sunday, morning: sunday.morning, afternoon: sunday.afternoon}],
+      availability: [{day:'monday', morning: monday.morning, afternoon: monday.afternoon},
+        {day: 'tuesday', morning: tuesday.morning, afternoon: tuesday.afternoon},
+        {day: 'wednesday', morning: wednesday.morning, afternoon: wednesday.afternoon},
+        {day: 'thursday', morning: thursday.morning, afternoon: thursday.afternoon},
+        {day: 'friday', morning: friday.morning, afternoon: friday.afternoon},
+        {day: 'saturday', morning: saturday.morning, afternoon: saturday.afternoon},
+        {day: 'sunday', morning: sunday.morning, afternoon: sunday.afternoon}],
       id: uuidv4()}
       console.log(payload)
 
@@ -125,7 +125,7 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
 
   }
 
-  useEffect(() => {
+ /* useEffect(() => {
     if (isUpdate && babysitter) {     
       setFirstName(babysitter.name.first)   // or firstName
       setLastName(babysitter.name.last) // or lastName
@@ -150,7 +150,7 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
       setSaturday(babysitter.availability.saturday)
       setSunday(babysitter.availability.Sunday)
     }
-  }, [babysitter])
+  }, [babysitter])*/
 
   return (
     <div className="otherContainer">
