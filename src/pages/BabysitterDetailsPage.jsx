@@ -7,7 +7,6 @@ import cloudImage from '../assets/Images/cloud_icon.png'
 const BabysitterDetailsPage = () => {
 
     const {babysitterId} = useParams()
-    const navigate = useNavigate()
 
     const [babysitter, setBabysitter] = useState()
 
@@ -43,7 +42,7 @@ const BabysitterDetailsPage = () => {
           </div>
           <h1 className="fontColor">{babysitter.name.first} {babysitter.name.last}</h1>
           <h4 className="fontColor">{babysitter.experience} years of experience</h4>
-          <p>£{babysitter.cost} per hour</p>
+          <p className="fontColor">£{babysitter.cost} per hour</p>
 
           <div className="nannyInfo" style={{display: 'flex', alignItems:'center'}}>
             <div className="nannyInfo" style={{display: 'flex', flexDirection: 'column', textAlign: 'left'}}>
@@ -58,7 +57,7 @@ const BabysitterDetailsPage = () => {
               <br/ >{babysitter.location.postcode} {babysitter.location.city}</p>
             </div>
             <div  className="nannyInfo" style={{textAlign:'justify', marginLeft:'3rem'}}>
-            <h3 className="fontColor">Description:</h3>
+            <h3 className="fontColor">Description</h3>
               <p className="whiteBox">{babysitter.description}</p>
               <h3 className="fontColor">Availability</h3>
               <AvailabilityPage />                          

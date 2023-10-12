@@ -21,9 +21,28 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
   const [picture, setPicture] = useState('')
   const [experience, setExperience] = useState(0)
   const [cost, setCost] = useState(0)
-  const [day, setDay] = useState('')
-  const [morning, setMorning] = useState(false)
-  const [afternoon, setAfternoon] = useState(false)
+  const [monday, setMonday] = useState({
+    day: '',
+    morning: true,
+    afternoon: false})
+  const [tuesday, setTuesday] = useState({
+    morning: true,
+    afternoon: false})
+  const [wednesday, setWednesday] = useState({
+    morning: true,
+    afternoon: false})
+  const [thursday, setThursday] = useState({
+    morning: true,
+    afternoon: false})
+  const [friday, setFriday] = useState({
+    morning: true,
+    afternoon: false})
+  const [saturday, setSaturday] = useState({
+    morning: true,
+    afternoon: false})
+  const [sunday, setSunday] = useState({
+    morning: true,
+    afternoon: false})
 
   const onSubmit = async event => {
     event.preventDefault()
@@ -39,7 +58,13 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
       cost,
       description, 
       picture,
-      availability: [{day, morning, afternoon}],
+      availability: [{day:monday.day, morning: monday.morning, afternoon: monday.afternoon},
+        {day: tuesday, morning: tuesday.morning, afternoon: tuesday.afternoon},
+        {day: wednesday, morning: wednesday.morning, afternoon: wednesday.afternoon},
+        {day: thursday, morning: thursday.morning, afternoon: thursday.afternoon},
+        {day: friday, morning: friday.morning, afternoon: friday.afternoon},
+        {day: saturday, morning: saturday.morning, afternoon: saturday.afternoon},
+        {day: sunday, morning: sunday.morning, afternoon: sunday.afternoon}],
       id: uuidv4()}
       console.log(payload)
 
@@ -64,6 +89,42 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
     }
   }
 
+  const handleChange = (e) => {
+    const inputName = e.target.name
+    console.log(e.target.checked)
+    if (inputName === 'monday-morning') {
+    setMonday({...monday, ['morning']: !monday.morning})
+    } if (inputName === 'tuesday-morning') {
+      setTuesday({...tuesday, ['morning']: !tuesday.morning})
+    } if (inputName === 'wednesday-morning') {
+      setWednesday({...wednesday, ['morning']: !wednesday.morning})
+    } if (inputName === 'thursday-morning') {
+      setThursday({...thursday, ['morning']: !thursday.morning})
+    } if (inputName === 'friday-morning') {
+      setFriday({...friday, ['morning']: !friday.morning})
+    } if (inputName === 'saturday-morning') {
+      setSaturday({...saturday, ['morning']: !saturday.morning})
+    } if (inputName === 'sunday-morning') {
+      setSunday({...sunday, ['morning']: !sunday.morning})
+    } else if (inputName === 'monday-afternoon') {
+      setMonday({...monday, ['afternoon']: !monday.afternoon})
+    } else if (inputName === 'tuesday-afternoon') {
+      setTuesday({...tuesday, ['afternoon']: !tuesday.afternoon})
+    } else if (inputName === 'wednesday-afternoon') {
+      setWednesday({...wednesday, ['afternoon']: !wednesday.afternoon})
+    } else if (inputName === 'thursday-afternoon') {
+      setThursday({...thursday, ['afternoon']: !thursday.afternoon})
+    } else if (inputName === 'friday-afternoon') {
+      setFriday({...friday, ['afternoon']: !friday.afternoon})
+    } else if (inputName === 'saturday-afternoon') {
+      setSaturday({...saturday, ['afternoon']: !saturday.afternoon})
+    } else if (inputName === 'sunday-afternoon') {
+      setSunday({...sunday, ['afternoon']: !sunday.afternoon})
+    }
+
+
+  }
+
   useEffect(() => {
     if (isUpdate && babysitter) {     
       setFirstName(babysitter.name.first)   // or firstName
@@ -81,9 +142,13 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
       setPicture(babysitter.picture) //largePic
       setExperience(babysitter.experience)
       setCost(babysitter.cost)
-      setDay(babysitter.availability.day)
-      setMorning(babysitter.availability.morning)
-      setAfternoon(babysitter.availability.afternoon)
+      setMonday(babysitter.availability.monday)
+      setTuesday(babysitter.availability.tuesday)
+      setWednesday(babysitter.availability.wednesday)
+      setThursday(babysitter.availability.thursday)
+      setFriday(babysitter.availability.friday)
+      setSaturday(babysitter.availability.saturday)
+      setSunday(babysitter.availability.Sunday)
     }
   }, [babysitter])
 
@@ -95,70 +160,6 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
         <div className="container">
         <form  className="row g-3" onSubmit={onSubmit}>
         
-        <div className="col-md-6">
-          <label htmlFor="inputFirstName" className="form-label">
-            First Name
-            <input type="name" className="form-control" id="inputFirstName" value={firstName} onChange={event => setFirstName(event.target.value)}  />
-          </label>
-        </div>
-
-        <div className="col-md-6">
-          <label htmlFor="inputLastName" className="form-label">
-            Last Name
-            <input type="name" className="form-control" id="inputLastName" value={lastName} onChange={event => setLastName(event.target.value)}  />
-          </label>
-        </div>
-
-        <div className="col-md-6">
-          <label htmlFor="inputGender" className="form-label">
-            I am 
-            <select id="inputGender" className="form-select" value={gender} onChange={event => setGender(event.target.value)} >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            </select>
-          </label>
-          </div>
-
-        <div className="col-md-6">
-          <label htmlFor="inputAge" className="form-label">
-            Age
-            <input className="form-control" id="inputAge" type='number' value={age} onChange={event => setAge(event.target.value)}  />
-          </label>
-        </div>
-
-        <div className="col-md-6">
-          <label htmlFor="inputExperience" className="form-label">
-            Experience
-            <input className="form-control" id="inputExperience" type='number' value={experience} onChange={event => setExperience(event.target.value)}/>
-          </label>
-          <label htmlFor="inputCost" className="form-label">
-            Hourly rate (£)
-            <input className="form-control" id="inputCost" type='number' value={cost} onChange={event => setCost(event.target.value)}/>
-          </label>
-        </div>
-
-        
-
-        <div className="col-md-6">
-          <label htmlFor="inputStreetNumber" className="form-label">
-            Street Number
-            <input type="text" className="form-control" id="inputStreetNumber" value={streetNumber} onChange={event => setStreetNumber(event.target.value)}  />
-          </label>
-        </div>
-        <div className="col-md-6">
-          <label htmlFor="inputStreetName" className="form-label">
-            Street Name
-            <input type="text" className="form-control" id="inputStreetName" value={streetName} onChange={event => setStreetName(event.target.value)}  />
-          </label>
-        </div>
-
-        <div className="col-md-6">
-          <label htmlFor="inputCityName" className="form-label">
-            City Name
-            <input type="text" className="form-control" id="inputCityName" value={cityName} onChange={event => setCityName(event.target.value)}  />
-          </label>
-        </div>
-
           <div className="col-md-6">
             <label htmlFor="inputFirstName" className="form-label">
               First Name
@@ -189,15 +190,15 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
               <input className="form-control" id="inputAge" type='number' value={age} onChange={event => setAge(event.target.value)}  />
             </label>
           </div>
-          
+
           <div className="col-md-6">
             <label htmlFor="inputExperience" className="form-label">
               Experience
               <input className="form-control" id="inputExperience" type='number' value={experience} onChange={event => setExperience(event.target.value)}/>
             </label>
-            <label>
-              Cost
-              <input type='number' value={cost} onChange={event => setCost(event.target.value)}/>
+            <label htmlFor="inputCost" className="form-label">
+              Hourly rate (£)
+              <input className="form-control" id="inputCost" type='number' value={cost} onChange={event => setCost(event.target.value)}/>
             </label>
           </div>
 
@@ -207,7 +208,6 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
               <input type="text" className="form-control" id="inputStreetNumber" value={streetNumber} onChange={event => setStreetNumber(event.target.value)}  />
             </label>
           </div>
-
           <div className="col-md-6">
             <label htmlFor="inputStreetName" className="form-label">
               Street Name
@@ -222,46 +222,46 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
             </label>
           </div>
 
-            <div className="col-md-6">
-            <label htmlFor="inputPostcode" className="form-label">
-              Postcode
-              <input type="text" className="form-control" id="inputPostcode" value={postcode} onChange={event => setPostcode(event.target.value)}  />
-            </label>
-            </div>
-
-            <div className="col-md-6">
-            <label htmlFor="inputEmail4" className="form-label">
-              Email
-              <input type="email" className="form-control" id="inputEmail4" value={email} onChange={event => setEmail(event.target.value)}  />
-            </label>
-            </div>
-
-            <div className="col-md-6">
-            <label htmlFor="inputTelephone" className="form-label">
-              Telephone
-              <input className="form-control" id="inputTelephone" value={phone} onChange={event => setPhone(event.target.value)}  />
-            </label>
-            </div>
-
-            <div className="col-md-6">
-            <label htmlFor="inputPassword4" className="form-label">
-              Password
-              <input type="password" className="form-control" id="inputPassword4" value={password} onChange={event => setPassword(event.target.value)} />
-            </label>
+          <div className="col-md-6">
+              <label htmlFor="inputPostcode" className="form-label">
+                Postcode
+                <input type="text" className="form-control" id="inputPostcode" value={postcode} onChange={event => setPostcode(event.target.value)}  />
+              </label>
           </div>
-            
-            <div className="col-md-6">
-            <label htmlFor="inputDescription" className="form-label">
-              Description
-              <textarea type="text" className="form-control" id="inputDescription" value={description} onChange={event => setDescription(event.target.value)} />
-            </label>
-            </div>
 
-            <div className="col-md-6">
-            <label htmlFor="inputPicture" className="form-label">
-              Picture
-              <input className="form-control" id="inputPicture" type="file" accept="image/*" value={picture} onChange={event => setPicture(event.target.value)}/>
-          </label>
+          <div className="col-md-6">
+              <label htmlFor="inputEmail4" className="form-label">
+                Email
+                <input type="email" className="form-control" id="inputEmail4" value={email} onChange={event => setEmail(event.target.value)}  />
+              </label>
+          </div>
+
+          <div className="col-md-6">
+              <label htmlFor="inputTelephone" className="form-label">
+                Telephone
+                <input className="form-control" id="inputTelephone" value={phone} onChange={event => setPhone(event.target.value)}  />
+              </label>
+          </div>
+
+          <div className="col-md-6">
+              <label htmlFor="inputPassword4" className="form-label">
+                Password
+                <input type="password" className="form-control" id="inputPassword4" value={password} onChange={event => setPassword(event.target.value)} />
+              </label>
+          </div>
+              
+          <div className="col-md-6">
+              <label htmlFor="inputDescription" className="form-label">
+                Description
+                <textarea type="text" className="form-control" id="inputDescription" value={description} onChange={event => setDescription(event.target.value)} />
+              </label>
+          </div>
+
+          <div className="col-md-6">
+              <label htmlFor="inputPicture" className="form-label">
+                Picture
+                <input className="form-control" id="inputPicture" type="file" accept="image/*" value={picture} onChange={event => setPicture(event.target.value)}/>
+            </label>
           </div>
 
           <div>
@@ -276,11 +276,66 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  
                   <tr>
                     <td>Monday</td>
                     <td>
-                        <input type="checkbox"  />
+                        <input type="checkbox" name='monday-morning' checked={monday.morning} onChange={handleChange}/>
+                    </td>
+                    <td>
+                        <input type="checkbox" name='monday-afternoon' checked={monday.afternoon} onChange={handleChange}/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tuesday</td>
+                    <td>
+                        <input type="checkbox" name='tuesday-morning' checked={tuesday.morning} onChange={handleChange}/>
+                    </td>
+                    <td>
+                        <input type="checkbox" name='tuesday-afternoon' checked={tuesday.afternoon} onChange={handleChange} />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Wednesday</td>
+                    <td>
+                        <input type="checkbox" name='wednesday-morning' checked={wednesday.morning} onChange={handleChange} />
+                    </td>
+                    <td>
+                        <input type="checkbox" name='wednesday-afternoon' checked={wednesday.afternoon} onChange={handleChange} />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Thursday</td>
+                    <td>
+                        <input type="checkbox" name='thursday-morning' checked={thursday.morning} onChange={handleChange} />
+                    </td>
+                    <td>
+                        <input type="checkbox" name='thursday-afternoon' checked={thursday.afternoon} onChange={handleChange} />
+                    </td>
+                  </tr><tr>
+                    <td>Friday</td>
+                    <td>
+                        <input type="checkbox" name='friday-morning' checked={friday.morning} onChange={handleChange} />
+                    </td>
+                    <td>
+                        <input type="checkbox" name='friday-afternoon' checked={friday.afternoon} onChange={handleChange} />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Saturday</td>
+                    <td>
+                        <input type="checkbox" name='saturday-morning' checked={saturday.morning} onChange={handleChange} />
+                    </td>
+                    <td>
+                        <input type="checkbox" name='saturday-afternoon' checked={saturday.afternoon} onChange={handleChange} />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sunday</td>
+                    <td>
+                        <input type="checkbox" name='sunday-morning' checked={sunday.morning} onChange={handleChange} />
+                    </td>
+                    <td>
+                        <input type="checkbox" name='sunday-afternoon' checked={sunday.afternoon} onChange={handleChange} />
                     </td>
                   </tr>
                 </tbody>
