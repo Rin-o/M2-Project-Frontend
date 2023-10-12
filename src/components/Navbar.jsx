@@ -21,7 +21,9 @@ function Navbar() {
                 <Link to='/aboutus'>
                 <button className="btnNav">About Us</button>
                 </Link>
+                <Link to='/adminPassword/:babysitterId'>
                 <button className="btnNav">Nanny Login</button>
+                </Link>
         </div>
         </nav>
         

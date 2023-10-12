@@ -13,7 +13,7 @@ const HomePage = () => {
                 <img src={nannyImage} alt="Image a teacher helping a child learn" className="imageRectangle"/>
             </div>
 
-            <footer></footer>
+            <footer />
         </>
      );
 }

@@ -18,8 +18,7 @@ const AdminPage = () => {
     }
 
         return (
-            <div className="otherContainer">
-            <h1>Login</h1>
+            <div className="adminLogin">
             <form onSubmit={handleLogin}>
               <label>Username:</label>
               <input
@@ -30,6 +29,7 @@ const AdminPage = () => {
                 onChange={(e) => setUsername(e.target.value)}
                 required
               />
+               
               <label>Password:</label>
               <input
                 type="password"

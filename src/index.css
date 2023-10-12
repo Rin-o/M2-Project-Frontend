@@ -94,6 +94,16 @@ li {
 
 }
 
+.adminLogin {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background: #fce4de;
+}
+
 .imageRectangle {
   height: 750px;
   width: 525px;
@@ -150,7 +160,7 @@ li {
 }
 
 .btnNav {
-  margin: 3px;
+  margin: 30px 3px;
   background-color: #fff;
   border: 0 solid #e2e8f0;
   border-radius: 1.5rem;
@@ -250,4 +260,14 @@ td{
   margin-left: 90px;
   margin-top: 20px;
   margin-right: 70px;
+}
+
+.foundersPic {
+  height: 100px;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+.founderInfo {
+  margin: 50px 300px 50px 300px;
 }
