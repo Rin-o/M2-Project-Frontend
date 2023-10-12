@@ -22,6 +22,27 @@ const UpdatePage = () => {
     const [picture, setPicture] = useState('')
     const [experience, setExperience] = useState(0)
     const [cost, setCost] = useState(0)
+    const [monday, setMonday] = useState({
+      morning: true,
+      afternoon: false})
+    const [tuesday, setTuesday] = useState({
+      morning: true,
+      afternoon: false})
+    const [wednesday, setWednesday] = useState({
+      morning: true,
+      afternoon: false})
+    const [thursday, setThursday] = useState({
+      morning: true,
+      afternoon: false})
+    const [friday, setFriday] = useState({
+      morning: true,
+      afternoon: false})
+    const [saturday, setSaturday] = useState({
+      morning: true,
+      afternoon: false})
+    const [sunday, setSunday] = useState({
+      morning: true,
+      afternoon: false})
     
     const onSubmit = async event => {
         event.preventDefault()
@@ -37,6 +58,13 @@ const UpdatePage = () => {
           cost,
           description, 
           picture,
+          availability: [{day:'monday', morning: monday.morning, afternoon: monday.afternoon},
+            {day: 'tuesday', morning: tuesday.morning, afternoon: tuesday.afternoon},
+            {day: 'wednesday', morning: wednesday.morning, afternoon: wednesday.afternoon},
+            {day: 'thursday', morning: thursday.morning, afternoon: thursday.afternoon},
+            {day: 'friday', morning: friday.morning, afternoon: friday.afternoon},
+            {day: 'saturday', morning: saturday.morning, afternoon: saturday.afternoon},
+            {day: 'sunday', morning: sunday.morning, afternoon: sunday.afternoon}],
           id: uuidv4()}
          console.log(payload)
     
@@ -83,6 +111,13 @@ const UpdatePage = () => {
             setPicture(babysitter.picture) 
             setExperience(babysitter.experience) 
             setCost(babysitter.cost)
+            setMonday(babysitter.availability[0].morning)
+            setTuesday(babysitter.availability[1].morning)
+            setWednesday(babysitter.availability[2].morning)
+            setThursday(babysitter.availability[3].morning)
+            setFriday(babysitter.availability[4].morning)
+            setSaturday(babysitter.availability[5].morning)
+            setSunday(babysitter.availability[6].morning)
         }
     }
 
@@ -173,7 +208,85 @@ const UpdatePage = () => {
             Picture
             <input value={picture} onChange={event => setPicture(event.target.value)}/>
           </label>
-          <button>Update</button>
+
+          <label>
+              Availability
+              <table>
+                <thead>
+                  <tr>
+                    <th>Day</th>
+                    <th>Morning</th>
+                    <th>Afternoon</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Monday</td>
+                    <td>
+                        <input value={monday?.morning} type="checkbox" name='monday-morning' checked={monday?.morning} onChange={event => setMonday(event.target.value)}/>
+                    </td>
+                    <td>
+                        <input value={monday?.afternoon} type="checkbox" name='monday-afternoon' /*checked={monday.afternoon}*/ onChange={event => setMonday(event.target.value)}/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tuesday</td>
+                    <td>
+                        <input value={tuesday?.morning} type="checkbox" name='tuesday-morning' onChange={event => setMonday(event.target.value)}/>
+                    </td>
+                    <td>
+                        <input value={tuesday?.afternoon} type="checkbox" name='tuesday-afternoon' onChange={event => setMonday(event.target.value)} />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Wednesday</td>
+                    <td>
+                        <input value={wednesday?.morning} type="checkbox" name='wednesday-morning' onChange={event => setMonday(event.target.value)} />
+                    </td>
+                    <td>
+                        <input value={wednesday?.afternoon} type="checkbox" name='wednesday-afternoon' onChange={event => setMonday(event.target.value)} />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Thursday</td>
+                    <td>
+                        <input value={thursday?.morning} type="checkbox" name='thursday-morning' onChange={event => setMonday(event.target.value)} />
+                    </td>
+                    <td>
+                        <input value={thursday?.afternoon} type="checkbox" name='thursday-afternoon' onChange={event => setMonday(event.target.value)} />
+                    </td>
+                  </tr><tr>
+                    <td>Friday</td>
+                    <td>
+                        <input value={friday?.morning} type="checkbox" name='friday-morning' onChange={event => setMonday(event.target.value)} />
+                    </td>
+                    <td>
+                        <input value={friday?.afternoon} type="checkbox" name='friday-afternoon' onChange={event => setMonday(event.target.value)} />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Saturday</td>
+                    <td>
+                        <input value={saturday?.morning} type="checkbox" name='saturday-morning' onChange={event => setMonday(event.target.value)} />
+                    </td>
+                    <td>
+                        <input value={saturday?.afternoon} type="checkbox" name='saturday-afternoon' onChange={event => setMonday(event.target.value)} />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sunday</td>
+                    <td>
+                        <input value={sunday?.morning} type="checkbox" name='sunday-morning' onChange={event => setMonday(event.target.value)} />
+                    </td>
+                    <td>
+                        <input value={sunday?.afternoon} type="checkbox" name='sunday-afternoon' onChange={event => setMonday(event.target.value)} />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </label>
+
+          <button>Save</button>
           <button type='button' onClick={()=>{handleDelete(babysitterId)}}>Delete</button>
 
         </form>

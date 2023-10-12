@@ -22,7 +22,6 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
   const [experience, setExperience] = useState(0)
   const [cost, setCost] = useState(0)
   const [monday, setMonday] = useState({
-    day: '',
     morning: true,
     afternoon: false})
   const [tuesday, setTuesday] = useState({
