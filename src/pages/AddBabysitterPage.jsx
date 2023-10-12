@@ -165,10 +165,10 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
       <h1 className="fontColor">Are you a nanny?</h1>
       <p>Only a few clicks away to register...350,000 people said they would recommend this website to their friends/families.</p>
       <p>I promise, you won't be disappointed!</p>
-          <form className="row g-3" onSubmit={onSubmit}>
+          <form onSubmit={onSubmit}>
 
            <div className="formAddNew">
-            <div>
+            <div className="row g-3">
 
               <div className="col-md-6">
                 <input placeholder="First Name" type="name" className="form-control" id="inputFirstName" value={firstName} onChange={event => setFirstName(event.target.value)} />
