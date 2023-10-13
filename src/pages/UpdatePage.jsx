@@ -152,18 +152,10 @@ const UpdatePage = () => {
 
   return (
     <div>
-      <form className="row g-3" onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
 
-        <div className="col-md-6">
-          <label className="form-label">
-            I am
-            <select type="gender" className="form-control" value={gender} onChange={event => setGender(event.target.value)}>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </label>
-        </div>
-
+      <div className="formAddNew">
+          <div className="row g-3">
 
         <div className="col-md-6">
           <label htmlFor="inputFirstName" className="form-label">
@@ -180,9 +172,63 @@ const UpdatePage = () => {
         </div>
 
         <div className="col-md-6">
+          <label className="form-label">
+            I am
+            <select type="gender" className="form-control" value={gender} onChange={event => setGender(event.target.value)}>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </label>
+        </div>
+
+        <div className="col-md-6">
+          <label className="form-label">
+            Email
+            <input type="text" className="form-control" value={email} onChange={event => setEmail(event.target.value)} />
+          </label>
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="inputPassword" className="form-label">
+            Password
+            <input type="text" className="form-control" id="inputPassword" value={password} onChange={event => setPassword(event.target.value)} />
+          </label>
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="inputTelephone" className="form-label">
+            Telephone
+            <input type="text" className="form-control" id="inputTelephone" value={phone} onChange={event => setPhone(event.target.value)} />
+          </label>
+        </div>
+
+
+        <div className="col-md-6">
           <label htmlFor="inputAge" className="form-label">
             Age
             <input type="number" className="form-control" id="inputAge" value={age} onChange={event => setAge(event.target.value)} />
+          </label>
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="inputExperience" className="form-label">
+            Experience
+            <input type="number" className="form-control" id="inputExperience" value={experience} onChange={event => setExperience(event.target.value)} />
+          </label>
+        </div>
+
+
+        <div className="col-md-6">
+          <label htmlFor="inputCost" className="form-label">
+            Hourly rate
+            <input type='number' className="form-control" id="inputCost" value={cost} onChange={event => setCost(event.target.value)} />
+          </label>
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="inputPicture" className="form-label">
+            Profile Picture
+            <input className="form-control" id="inputPicture" value={picture} onChange={event => setPicture(event.target.value)} />
           </label>
         </div>
 
@@ -216,138 +262,100 @@ const UpdatePage = () => {
           </label>
         </div>
 
-        <div className="col-md-6">
-          <label className="form-label">
-            Email
-            <input type="text" className="form-control"  value={email} onChange={event => setEmail(event.target.value)} />
-          </label>
-        </div>
 
-        <div className="col-md-6">
-          <label htmlFor="inputTelephone" className="form-label">
-            Telephone
-            <input type="text" className="form-control" id="inputTelephone" value={phone} onChange={event => setPhone(event.target.value)} />
-          </label>
-        </div>
-
-        <div className="col-md-6">
-          <label htmlFor="inputPassword" className="form-label">
-            Password
-            <input type="text" className="form-control" id="inputPassword" value={password} onChange={event => setPassword(event.target.value)} />
-          </label>
-        </div>
-
-
-        <div className="col-md-6">
-          <label htmlFor="inputExperience" className="form-label">
-            Experience
-            <input type="number" className="form-control" id="inputExperience" value={experience} onChange={event => setExperience(event.target.value)} />
-          </label>
-        </div>
-
-
-        <div className="col-md-6">
-          <label htmlFor="inputCost" className="form-label">
-            Hourly rate
-            <input type='number' className="form-control" id="inputCost" value={cost} onChange={event => setCost(event.target.value)} />
-          </label>
-        </div>
-
-
-        <div className="col-md-6">
+        <div className="col-md-12">
           <label htmlFor="inputDescription" className="form-label">
             Description
             <textarea className="form-control" id="inputDescription" value={description} onChange={event => setDescription(event.target.value)} />
           </label>
         </div>
 
-        <div className="col-md-6">
-          <label htmlFor="inputPicture" className="form-label">
-            Profile Picture
-            <input className="form-control" id="inputPicture" value={picture} onChange={event => setPicture(event.target.value)} />
-          </label>
-        </div>
+      </div>
 
+      <div className="tbl-header2">
+        <label>
+        <h3 className="fontColor">Availability</h3>
+          <table>
+            <thead>
+            <tr className="border-top">
+                <th>Day</th>
+                <th>Morning</th>
+                <th>Afternoon</th>
+              </tr>
+            </thead>
+            <tbody className="tbl-content">
+                  <tr className="border-top">
+                <td>Monday</td>
+                <td>
+                  <input type="checkbox" name='monday-morning' checked={monday?.morning} onChange={() => setMonday({ ...monday, ['morning']: !monday.morning })} />
+                </td>
+                <td>
+                  <input type="checkbox" name='monday-afternoon' checked={monday.afternoon} onChange={() => setMonday({ ...monday, ['afternoon']: !monday.afternoon })} />
+                </td>
+              </tr>
+              <tr className="border-top">
+                <td>Tuesday</td>
+                <td>
+                  <input type="checkbox" name='tuesday-morning' checked={tuesday?.morning} onChange={event => setTuesday({ ...tuesday, ['morning']: !tuesday.morning })} />
+                </td>
+                <td>
+                  <input type="checkbox" name='tuesday-afternoon' checked={tuesday.afternoon} onChange={event => setTuesday({ ...tuesday, ['afternoon']: !tuesday.afternoon })} />
+                </td>
+              </tr>
+              <tr className="border-top">
+                <td>Wednesday</td>
+                <td>
+                  <input type="checkbox" name='wednesday-morning' checked={wednesday?.morning} onChange={event => setWednesday({ ...wednesday, ['morning']: !wednesday.morning })} />
+                </td>
+                <td>
+                  <input type="checkbox" name='wednesday-afternoon' checked={wednesday.afternoon} onChange={event => setWednesday({ ...wednesday, ['afternoon']: !wednesday.afternoon })} />
+                </td>
+              </tr>
+              <tr className="border-top">
+                <td>Thursday</td>
+                <td>
+                  <input type="checkbox" name='thursday-morning' checked={thursday?.morning} onChange={event => setThursday({ ...thursday, ['morning']: !thursday.morning })} />
+                </td>
+                <td>
+                  <input type="checkbox" name='thursday-afternoon' checked={thursday.afternoon} onChange={event => setThursday({ ...thursday, ['afternoon']: !thursday.afternoon })} />
+                </td>
+              </tr>
+              <tr className="border-top">
+                <td>Friday</td>
+                <td>
+                  <input type="checkbox" name='friday-morning' checked={friday?.morning} onChange={event => setFriday({ ...friday, ['morning']: !friday.morning })} />
+                </td>
+                <td>
+                  <input type="checkbox" name='friday-afternoon' checked={friday.afternoon} onChange={event => setFriday({ ...friday, ['afternoon']: !friday.afternoon })} />
+                </td>
+              </tr>
+              <tr className="border-top">
+                <td>Saturday</td>
+                <td>
+                  <input type="checkbox" name='saturday-morning' checked={saturday?.morning} onChange={event => setSaturday({ ...saturday, ['morning']: !saturday.morning })} />
+                </td>
+                <td>
+                  <input type="checkbox" name='saturday-afternoon' checked={saturday.afternoon} onChange={event => setSaturday({ ...saturday, ['afternoon']: !saturday.afternoon })} />
+                </td>
+              </tr>
+              <tr className="border-top">
+                <td>Sunday</td>
+                <td>
+                  <input type="checkbox" name='sunday-morning' checked={sunday?.morning} onChange={event => setSunday({ ...sunday, ['morning']: !sunday.morning })} />
+                </td>
+                <td>
+                  <input type="checkbox" name='sunday-afternoon' checked={sunday.afternoon} onChange={event => setSunday({ ...sunday, ['afternoon']: !sunday.afternoon })} />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </label>
+      </div>
+ 
+    </div>
 
-          <label>
-            Availability
-            <table>
-              <thead>
-                <tr>
-                  <th>Day</th>
-                  <th>Morning</th>
-                  <th>Afternoon</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Monday</td>
-                  <td>
-                    <input type="checkbox" name='monday-morning' checked={monday?.morning} onChange={() => setMonday({ ...monday, ['morning']: !monday.morning })} />
-                  </td>
-                  <td>
-                    <input type="checkbox" name='monday-afternoon' checked={monday.afternoon} onChange={() => setMonday({ ...monday, ['afternoon']: !monday.afternoon })} />
-                  </td>
-                </tr>
-                <tr>
-                  <td>Tuesday</td>
-                  <td>
-                    <input type="checkbox" name='tuesday-morning' checked={tuesday?.morning} onChange={event => setTuesday({ ...tuesday, ['morning']: !tuesday.morning })} />
-                  </td>
-                  <td>
-                    <input type="checkbox" name='tuesday-afternoon' checked={tuesday.afternoon} onChange={event => setTuesday({ ...tuesday, ['afternoon']: !tuesday.afternoon })} />
-                  </td>
-                </tr>
-                <tr>
-                  <td>Wednesday</td>
-                  <td>
-                    <input type="checkbox" name='wednesday-morning' checked={wednesday?.morning} onChange={event => setWednesday({ ...wednesday, ['morning']: !wednesday.morning })} />
-                  </td>
-                  <td>
-                    <input type="checkbox" name='wednesday-afternoon' checked={wednesday.afternoon} onChange={event => setWednesday({ ...wednesday, ['afternoon']: !wednesday.afternoon })} />
-                  </td>
-                </tr>
-                <tr>
-                  <td>Thursday</td>
-                  <td>
-                    <input type="checkbox" name='thursday-morning' checked={thursday?.morning} onChange={event => setThursday({ ...thursday, ['morning']: !thursday.morning })} />
-                  </td>
-                  <td>
-                    <input type="checkbox" name='thursday-afternoon' checked={thursday.afternoon} onChange={event => setThursday({ ...thursday, ['afternoon']: !thursday.afternoon })} />
-                  </td>
-                </tr><tr>
-                  <td>Friday</td>
-                  <td>
-                    <input type="checkbox" name='friday-morning' checked={friday?.morning} onChange={event => setFriday({ ...friday, ['morning']: !friday.morning })} />
-                  </td>
-                  <td>
-                    <input type="checkbox" name='friday-afternoon' checked={friday.afternoon} onChange={event => setFriday({ ...friday, ['afternoon']: !friday.afternoon })} />
-                  </td>
-                </tr>
-                <tr>
-                  <td>Saturday</td>
-                  <td>
-                    <input type="checkbox" name='saturday-morning' checked={saturday?.morning} onChange={event => setSaturday({ ...saturday, ['morning']: !saturday.morning })} />
-                  </td>
-                  <td>
-                    <input type="checkbox" name='saturday-afternoon' checked={saturday.afternoon} onChange={event => setSaturday({ ...saturday, ['afternoon']: !saturday.afternoon })} />
-                  </td>
-                </tr>
-                <tr>
-                  <td>Sunday</td>
-                  <td>
-                    <input type="checkbox" name='sunday-morning' checked={sunday?.morning} onChange={event => setSunday({ ...sunday, ['morning']: !sunday.morning })} />
-                  </td>
-                  <td>
-                    <input type="checkbox" name='sunday-afternoon' checked={sunday.afternoon} onChange={event => setSunday({ ...sunday, ['afternoon']: !sunday.afternoon })} />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </label>
-
-          <button>Save</button>
-          <button type='button' onClick={() => { handleDelete(babysitterId) }}>Delete</button>
+        <button className="btnNav">Save</button>
+        <button className="btnNav" type='button' onClick={() => { handleDelete(babysitterId) }}>Delete</button>
 
       </form>
     </div>

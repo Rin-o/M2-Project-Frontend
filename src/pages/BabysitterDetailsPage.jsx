@@ -63,7 +63,7 @@ const BabysitterDetailsPage = () => {
               <AvailabilityPage />                          
             </div>
           </div>
-          <button type='button' className="btnNav">Send an email</button>
+          <button type='button' className="btnNav"><a href="mailto:email@example.com?subject=Mail Example of Mailto Links">Send an email</a></button>
           <Link to={`/adminPassword/${babysitterId}`}>
             <button type='button' className="btnNav">Update</button>
           </Link>
