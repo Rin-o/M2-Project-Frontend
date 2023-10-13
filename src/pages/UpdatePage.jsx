@@ -160,117 +160,128 @@ const UpdatePage = () => {
         <div className="col-md-6">
           <label htmlFor="inputFirstName" className="form-label">
             First Name
+            </label>
             <input type="text" className="form-control" id="inputFirstName" value={firstName} onChange={event => setFirstName(event.target.value)} />
-          </label>
         </div>
 
         <div className="col-md-6">
           <label htmlFor="inputLastName" className="form-label">
             Last Name
+            </label>
             <input type="text" className="form-control" id="inputLastName" value={lastName} onChange={event => setLastName(event.target.value)} />
-          </label>
+          
         </div>
 
         <div className="col-md-6">
           <label className="form-label">
             I am
+            </label>
             <select type="gender" className="form-control" value={gender} onChange={event => setGender(event.target.value)}>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
-          </label>
+          
         </div>
 
         <div className="col-md-6">
           <label className="form-label">
             Email
+            </label>
             <input type="text" className="form-control" value={email} onChange={event => setEmail(event.target.value)} />
-          </label>
         </div>
 
         <div className="col-md-6">
           <label htmlFor="inputPassword" className="form-label">
             Password
+            </label>
             <input type="text" className="form-control" id="inputPassword" value={password} onChange={event => setPassword(event.target.value)} />
-          </label>
         </div>
 
         <div className="col-md-6">
           <label htmlFor="inputTelephone" className="form-label">
             Telephone
+            </label>
             <input type="text" className="form-control" id="inputTelephone" value={phone} onChange={event => setPhone(event.target.value)} />
-          </label>
+          
         </div>
 
 
         <div className="col-md-6">
           <label htmlFor="inputAge" className="form-label">
             Age
+            </label>
             <input type="number" className="form-control" id="inputAge" value={age} onChange={event => setAge(event.target.value)} />
-          </label>
+          
         </div>
 
         <div className="col-md-6">
           <label htmlFor="inputExperience" className="form-label">
             Experience
+            </label>
             <input type="number" className="form-control" id="inputExperience" value={experience} onChange={event => setExperience(event.target.value)} />
-          </label>
+
         </div>
 
 
         <div className="col-md-6">
           <label htmlFor="inputCost" className="form-label">
             Hourly rate
+            </label>
             <input type='number' className="form-control" id="inputCost" value={cost} onChange={event => setCost(event.target.value)} />
-          </label>
+          
         </div>
 
         <div className="col-md-6">
           <label htmlFor="inputPicture" className="form-label">
             Profile Picture
+            </label>
             <input className="form-control" id="inputPicture" value={picture} onChange={event => setPicture(event.target.value)} />
-          </label>
+         
         </div>
 
         <div className="col-md-6">
           <label htmlFor="inputStreetNumber" className="form-label">
             Street Number
+            </label>
             <input type="text" className="form-control" id="inputStreetNumber" value={streetNumber} onChange={event => setStreetNumber(event.target.value)} />
-          </label>
+        
         </div>
 
 
         <div className="col-md-6">
           <label htmlFor="inputStreetName" className="form-label">
             Street Name
+            </label>
             <input type="text" className="form-control" id="inputStreetName" value={streetName} onChange={event => setStreetName(event.target.value)} />
-          </label>
+         
         </div>
 
         <div className="col-md-6">
           <label htmlFor="inputPostcode" className="form-label">
             Postcode
+            </label>
             <input type="text" className="form-control" id="inputPostcode" value={postcode} onChange={event => setPostcode(event.target.value)} />
-          </label>
+          
         </div>
 
 
         <div className="col-md-6">
           <label htmlFor="inputCityName" className="form-label">
             City
+            </label>
             <input type="text" className="form-control" id="inputCity" value={cityName} onChange={event => setCityName(event.target.value)} />
-          </label>
+          
         </div>
 
 
-        <div className="col-md-12">
+        <div className="col-12">
           <label htmlFor="inputDescription" className="form-label">
             Description
-            <textarea className="form-control" id="inputDescription" value={description} onChange={event => setDescription(event.target.value)} />
           </label>
-        </div>
+         <textarea type="text" className="form-control" id="inputDescription" value={description} onChange={event => setDescription(event.target.value)} />        
+       </div>
 
-      </div>
+        </div>
 
       <div className="tbl-header2">
         <label>
