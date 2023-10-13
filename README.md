@@ -1,4 +1,4 @@
-# Project Name
+# IronNanny
 
 ## [See the App!](https://ironnanny.netlify.app/)
 
@@ -6,7 +6,7 @@
 
 ## Description
 
-**NOTE -** There is a real lack of profesionnal structures to welcome young children under 3 years-old.
+There is a real lack of profesionnal structures to welcome young children under 3 years-old.
 Move from a place to another and the task would become even more complicated.
 Every parents look for the best for their babys so IronNanny has been thought to help families finding the best nanny for them whenever they need and wherever they are.
 
@@ -36,82 +36,113 @@ In this project we used: HTML, CSS, Javascript, React, VITE, API, Bootstrap
 
 ## Routes
 
-**NOTE -** List here all the routes of your server. Example:
-
 - GET /
+
   - renders the homepage
+
 - GET /babysitters
+
   - renders list of all the nannys available
+  - redirects to /babysitters/:babysitterId
+
 - GET /babysitters/:babysitterId
-  -
-- GET /auth/signup
-  - redirects to / if user logged in
-  - renders the signup form (with flash msg)
-- POST /auth/signup
-  - redirects to / if user logged in
+
+  - renders details about a specific nanny
+  - redirects to /adminPassword/:babysitterId
+  - redirects to external inbox
+
+- GET /adminPassword/:babysitterId
+  - redirects to /babysitters/:babysitterId/update if user logged in
+- POST /adminPassword/:babysitterId
+
   - body:
     - username
+    - password
+
+- GET /babysitters/:babysitterId/update
+  - renders form with prepopulated input
+  - redirects to /babysitters/:babysitterId if user click on 'Save' button
+- PUT /babysitters/:babysitterId/update
+  - body:
+    - firstname, lastname
+    - gender
+    - age
+    - telephone
     - email
-    - password
-- GET /auth/login
-  - redirects to / if user logged in
-  - renders the login form (with flash msg)
-- POST /auth/login
-
-  - redirects to / if user logged in
-  - body:
-    - username
-    - password
-
-- GET /events
-  - renders the event list + the create form
-- POST /events/create
-  - redirects to / if user is anonymous
-  - body:
-    - name
-    - date
-    - location
+    - address
+    - experience
+    - hourly rate
     - description
+    - availability
+- DELETE /babysitters/:babysitterId/update
+
+  - redirects to /babysitters if you click on 'Delete' button
+
+- GET /babysitters/new
+  - renders empty form
+  - redirects to /adminPassword/:babysitterId if you click on 'Create your account' button
+- PUT /babysitters/new
+  - body:
+    - firstname, lastname
+    - gender
+    - age
+    - telephone
+    - email
+    - address
+    - experience
+    - hourly rate
+    - description
+    - availability
 
 ## Models
 
-**NOTE -** List here all the models & Schemas of your Database Structure. Example:
-
 User model
 
-```
-username: String
-password: String
-```
-
-Event model
-
-```
-owner: ObjectId<User>
-name: String
-description: String
-date: Date
-```
+      gender: String,
+      name: {
+        first: String,
+        last: String
+      },
+      location:{
+        streetNumber: Number,
+        streetName: String,
+        city: String,
+        postcode: String
+      },
+      email: String,
+      age: Number,
+      experience: Number,
+      cost: Number,
+      phone: String,
+      id: Id,
+      picture: File,
+      description: String,
+      availability: [
+        {
+          "day": String,
+          "morning": Boolean,
+          "afternoon": Boolean
+        },
+        {... x6 (for each day of the week)
+        }
+      ]
 
 ## Links
 
 ## Collaborators
 
-[Developer 1 name](www.github-url.com)
+[Rino Ito](https://github.com/Rin-o)
 
-[Developer 2 name](www.github-url.com)
+[Alice Pennec](https://github.com/)
 
 ### Project
 
-[Repository Link](www.your-github-url-here.com)
+[Backend Repository Link](https://github.com/Rin-o/json-server-backend-M2Project)
 
-[Deploy Link](www.your-deploy-url-here.com)
+[Frontend Repository Link](https://github.com/Rin-o/M2-Project-Frontend)
 
-### Trello
-
-[Link to your trello board](www.your-trello-url-here.com)
+[Deploy Link](https://ironnanny.netlify.app/)
 
 ### Slides
 
-[Slides Link](www.your-slides-url-here.com)
-\
+[Slides Link](https://www.canva.com/design/DAFxCGa2v1Q/kZCmogoVs-ddtp9sWTzcbA/view?utm_content=DA[…]mpaign=designshare&utm_medium=link&utm_source=publishsharelink)
