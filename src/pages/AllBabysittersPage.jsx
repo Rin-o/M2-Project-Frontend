@@ -9,7 +9,7 @@ const AllBabysittersPage = () => {
 
     const fetchAllBabysitters = async () => {
         try {
-          const response = await fetch('https://localhost:5005/babysitters',
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/babysitters`,
           {
             method: 'GET',
             body: JSON.stringify(),

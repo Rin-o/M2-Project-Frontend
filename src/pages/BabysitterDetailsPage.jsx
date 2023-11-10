@@ -12,7 +12,7 @@ const BabysitterDetailsPage = () => {
 
     const fetchBabysitter = async () => {
         try {
-        const response = await fetch(`https://localhost:5005/babysitters/${babysitterId}`)
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/babysitters/${babysitterId}`)
         if (response.ok) {
             const babysitter = await response.json()
             setBabysitter(babysitter)
