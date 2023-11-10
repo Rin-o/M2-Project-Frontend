@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import cloudImage from '../assets/Images/cloud_icon.png'
@@ -77,7 +77,7 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:5005/babysitters`,
+        `https://localhost:5005/babysitters`,
         {
           method: isUpdate ? 'PUT' : 'POST',
           body: JSON.stringify(payload),
@@ -132,33 +132,6 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
 
 
   }
-
-  /* useEffect(() => {
-     if (isUpdate && babysitter) {     
-       setFirstName(babysitter.name.first)   // or firstName
-       setLastName(babysitter.name.last) // or lastName
-       setGender(babysitter.gender)
-       setAge(babysitter.age) //or age
-       setDescription(babysitter.description)
-       setStreetNumber(babysitter.location.streetNumber) //streetNumber
-       setStreetName(babysitter.location.streetName) //streetName
-       setCityName(babysitter.location.city) //cityName
-       setPostcode(babysitter.location.postcode) //postcode
-       setEmail(babysitter.email)
-       setPhone(babysitter.phone) //telephone
-       setPassword(babysitter.password)
-       setPicture(babysitter.picture) //largePic
-       setExperience(babysitter.experience)
-       setCost(babysitter.cost)
-       setMonday(babysitter.availability.monday)
-       setTuesday(babysitter.availability.tuesday)
-       setWednesday(babysitter.availability.wednesday)
-       setThursday(babysitter.availability.thursday)
-       setFriday(babysitter.availability.friday)
-       setSaturday(babysitter.availability.saturday)
-       setSunday(babysitter.availability.Sunday)
-     }
-   }, [babysitter])*/
 
   return (
     <div >
@@ -337,11 +310,6 @@ const AddBabysitterPage = ({ isUpdate, babysitter }) => {
         <button className="btnNav" type="submit">Create your account</button>
       </form >
     </div>
-
-
-
-
-
   )
 }
 

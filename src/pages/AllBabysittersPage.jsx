@@ -9,7 +9,7 @@ const AllBabysittersPage = () => {
 
     const fetchAllBabysitters = async () => {
         try {
-          const response = await fetch('http://localhost:5005/babysitters',
+          const response = await fetch('https://localhost:5005/babysitters',
           {
             method: 'GET',
             body: JSON.stringify(),

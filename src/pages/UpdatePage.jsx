@@ -78,7 +78,7 @@ const UpdatePage = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5005/babysitters/${babysitterId}`,
+        `https://localhost:5005/babysitters/${babysitterId}`,
         {
           method: 'PUT',
           body: JSON.stringify(payload),
@@ -99,7 +99,7 @@ const UpdatePage = () => {
   }
 
   const fetchBabysitter = async () => {
-    const response = await fetch(`http://localhost:5005/babysitters/${babysitterId}`
+    const response = await fetch(`https://localhost:5005/babysitters/${babysitterId}`
     )
     if (response.ok) {
       const babysitter = await response.json()
@@ -135,7 +135,7 @@ const UpdatePage = () => {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:5005/babysitters/${babysitterId}`, {
+      const response = await fetch(`https://localhost:5005/babysitters/${babysitterId}`, {
         method: 'DELETE',
       })
       if (response.ok) {

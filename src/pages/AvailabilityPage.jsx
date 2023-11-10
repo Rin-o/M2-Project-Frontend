@@ -8,7 +8,7 @@ const WeeklyAvailability = () => {
 
     const fetchAllDays = async () => {
         try {
-          const response = await fetch(`http://localhost:5005/babysitters/${babysitterId}`)
+          const response = await fetch(`https://localhost:5005/babysitters/${babysitterId}`)
           if (response.ok) {
             const allDays = await response.json()
             console.log(allDays)
