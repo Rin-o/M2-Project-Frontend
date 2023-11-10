@@ -9,7 +9,14 @@ const AllBabysittersPage = () => {
 
     const fetchAllBabysitters = async () => {
         try {
-          const response = await fetch('http://localhost:5005/babysitters')
+          const response = await fetch('http://localhost:5005/babysitters',
+          {
+            method: 'GET',
+            body: JSON.stringify(),
+            headers: {
+              'Content-type': 'application/json',
+            },
+          })
           if (response.ok) {
             const allBabysitters = await response.json()
             console.log(allBabysitters)
